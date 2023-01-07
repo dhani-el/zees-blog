@@ -1,0 +1,109 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    cursor: none;
+}
+.search-bar {
+    position: absolute;
+    top: 2vh;
+    left: 40%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    border-radius: 50px;
+}
+.search-bar input {
+    height: 2.5rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: none;
+    outline: none;
+    padding-left: 1em;
+    width: 12rem;
+}
+.search-bar button {
+    height: 2.5rem;
+    position: relative;
+    border: none;
+    background-color: white;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+.search-bar button img {
+    padding: 0em 1.2em;
+}
+.bloglist {
+    margin-top: 5%;
+    position: relative;
+    z-index: 2;
+}
+.blog-preview {
+    width: 60%;
+    margin: auto;
+    border-bottom: .05px solid rgb(68, 145, 131, 0.3);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.blog-preview .blog-text {
+    width: 70%;
+}
+.writer {
+    display: flex;
+    align-items: center;
+}
+.author {
+    margin-right: .4em;
+    text-transform: capitalize;
+    font-weight: 350;
+}
+.writer .point {
+    margin-right: .4em;
+    font-weight: 200;
+    margin-bottom: .5em;
+    font-weight: 400;
+    color: rgba(58, 58, 58, 0.7)
+}
+.date {
+    color: rgba(58, 58, 58, 0.7);
+}
+.blog-preview a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.blogs-container .blog-title {
+    margin-top: 1rem;
+}
+.blog-preview p {
+    text-transform: none;
+    font-weight: 350;
+    font-size: .7em;
+    color: rgba(0,0,0,0.8);
+}
+.blogs-container .blog-stuff {
+    font-size: .8em;
+    display: flex;
+}
+.blogs-container .blog-stats {
+    display: flex;
+    align-items: center;
+}
+.genre {
+    background-color: rgb(22, 69, 61, 0.8);
+    width: min-content;
+    padding: .3em .7em;
+    border-radius: 1em;
+    margin-right: 1em;
+    font-size: .8em;
+    color: white;
+    font-weight: 400;
+}
+.blogs-container .read-time {
+    color: rgba(58, 58, 58, 0.9);
+}

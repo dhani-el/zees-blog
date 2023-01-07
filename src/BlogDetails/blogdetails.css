@@ -1,0 +1,191 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.blog-details {
+    width: 60%;
+    margin-left: 7rem;
+    margin-top: 5%;
+}
+.blog-details .blog-nav {
+    display: flex;
+    justify-content: space-between;
+}
+.blog-details .share-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.blog-details .share-container .share-icons img {
+    border-radius: 50%;
+    background-color: rgb(22, 69, 61);
+    padding: 6px;
+}
+.copy-share {
+    width:  2rem;
+    height: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+.copy-share img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.blog-details .share-container .share-icons {
+    position: relative;
+}
+.blog-details .share-container .tweet-share::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -3.7em;
+    background-color: rgb(22, 69, 61);
+    color: white;
+    width: max-content;
+    font-size: .8em;
+    font-weight: 600;
+    left: -100%;
+    padding: .7em .3em;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: bottom center;
+}
+.blog-details .share-container .what-share::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -3.7em;
+    background-color: rgb(22, 69, 61);
+    color: white;
+    width: max-content;
+    font-size: .8em;
+    font-weight: 600;
+    left: 50%;
+    padding: .7em .3em;
+    border-radius: 4px;
+    transform: scale(0) translateX(-50%);
+    transform-origin: bottom left;
+}
+.blog-details .share-container .copy-share::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -3.7em;
+    background-color: rgb(22, 69, 61);
+    backdrop-filter: blur(1rem);
+    color: white;
+    width: max-content;
+    font-size: .8em;
+    font-weight: 600;
+    left: 50%;
+    padding: .7em .3em;
+    border-radius: 4px;
+    transform: scale(0) translateX(-50%);
+    transform-origin: bottom left;
+}
+.blog-details .share-container .copy-share:hover::before {
+    transform: scale(1) translateX(-50%);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+.blog-details .share-container .tweet-share:hover::before {
+    transform: scale(1);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+.blog-details .share-container .what-share:hover::before {
+    transform: scale(1) translateX(-50%);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+.blog-details .share-container .tweet-share::after,
+.blog-details .share-container .what-share::after,
+.blog-details .share-container .copy-share::after {
+    content: '';
+    border:  10px solid transparent;
+    position: absolute;
+    border-top-color: rgb(22, 69, 61);
+    top: -.9em;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: top center;
+}
+.blog-details .share-container .tweet-share:hover:after,
+.blog-details .share-container .what-share:hover:after,
+.blog-details .share-container .copy-share:hover:after {
+    transform: translateX(-50%) scale(1);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+.copy-alert {
+    position: absolute;
+    animation: alert 3s ease-in 100ms  forwards;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-100%);
+    color: white;
+    background-color: rgb(22, 69, 61);
+    padding: 1.5rem 1.5rem;
+    font-size: 1em;
+    font-weight: 600;
+}
+@keyframes alert {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.blog-details .share-container {
+    gap: 1em;
+    display: flex;
+}
+.blog-nav .blog-stuff {
+    display: flex;
+}
+.zee-img-wrapper {
+    position: relative;
+}
+.zee-head-wrapper {
+    width: 3.5rem;
+    margin-right: 1em;
+}
+.zee-head-wrapper img {
+    border-radius: 50%;
+    max-width: 100%;
+}
+.zee-img-wrapper .name {
+    position: absolute;
+    top: .5em;
+    left: 4.5em;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+.blog-details .blog-stats {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: .5em;
+    align-items: center;
+    color: rgba(58, 58, 58, 0.7);
+    font-weight: 400;
+}
+.blog-stats .date {
+    text-transform: capitalize;
+    margin-right: .5em;
+}
+.blog-stats .dot {
+   position: relative;
+   bottom: .25em;
+}
+.blog-details .blog-stats .read-time {
+    color: rgba(58, 58, 58, 0.7);
+    margin-left: .5em;
+}
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(41, 41, 41, 1);
+}
+.blog-details p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.5em;
+}

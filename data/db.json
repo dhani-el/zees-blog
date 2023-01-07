@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "title": "my first blog",
+      "body": "Jewel Gardens  is a beautiful, well laid out enclave in a serene and developed neighborhood of Eleko town in Ibeju lekki. The property is situated along the Lekki Coastal road that links Ibeju Lekki to Victoria Island surrounded by the breathtaking view of the ocean side, with its good land title and complete documents you can be rest assured that you are owning more than just a land you will be owning a treasure.",
+      "author": "mario",
+      "genre": "games",
+      "readTime": "9 min read",
+      "date": "sep 14",
+      "id": 1
+    },
+    {
+      "title": "opening party!",
+      "body": "Jewel Gardens  is a beautiful, well laid out enclave in a serene and developed neighborhood of Eleko town in Ibeju lekki. The property is situated along the Lekki Coastal road that links Ibeju Lekki to Victoria Island surrounded by the breathtaking view of the ocean side, with its good land title and complete documents you can be rest assured that you are owning more than just a land you will be owning a treasure.",
+      "author": "yoshi",
+      "genre": "games",
+      "readTime": "9 min read",
+      "date": "sep 14",
+      "id": 2
+    },
+    {
+      "title": "chim",
+      "body": "fuck everybody",
+      "genre": "idiot",
+      "id": 3
+    },
+    {
+      "title": "dddgggy",
+      "body": "vcrwbytrdewsxecrtvbgyuhnjimgtfrdeswdefrgthyjnuimko,",
+      "genre": "ffhhhbhb",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.genre-header {
+    margin-left: 20%;
+    text-transform: capitalize;
+    border-bottom: .05px solid hsl(0, 1%, 75%);
+    width: 60%;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+}

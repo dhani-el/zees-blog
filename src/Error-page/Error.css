@@ -1,0 +1,41 @@
+.error-page-container {
+    display: flex;
+    padding: 0 5rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.error-texts {
+    line-height: .8rem;
+}
+.description {
+    margin-bottom: 4rem;
+}
+.error-texts a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    background-color: #17473E;
+    font-size: 1.3em;
+    padding: .5em 1.5em;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all ease-in-out 0.4s;
+  }
+  .error-texts a:hover,
+  .error-texts a:focus {
+    border-radius: 30px;
+    transition: 500ms;
+  }
+.fun-image-container {
+    width: 60vw;
+}
+.fun-image-container img {
+    max-width: 100%;
+}
+.m2 {
+    position: absolute;
+    bottom: -5rem;
+    right: 0;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(11%) saturate(3794%) hue-rotate(122deg) brightness(91%) contrast(82%);
+}
