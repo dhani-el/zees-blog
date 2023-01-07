@@ -6,7 +6,7 @@ import man from "../Images/man.jpeg"
     return ( 
         <div className="bloglist">
                     {blogs.map((blog) => (
-                        <div className="blog-preview">
+                        <div className="blog-preview" key={blog._id}>
                             <div className="blog-text">
                                 <div className="writer"><div className="author">zee</div><div className="point">.</div> <div className="date">{blog.date}</div></div>
                                 <Link to={`/blog/${blog.id}`}>

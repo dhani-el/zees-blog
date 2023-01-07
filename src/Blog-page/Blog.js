@@ -16,7 +16,7 @@ import Footer from "../App/Footer";
 
 
 const Blog = () => {
-    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs');
+    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/0');
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     // 
