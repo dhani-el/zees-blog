@@ -8,9 +8,7 @@ const Preloader = () => {
     const el = useRef(null);
     const headerRef = useRef(null);
 
-    useEffect(() => {     
-        
-        
+    useEffect(() => {      
         gsap.to(el.current, { 
             duration: 0.5,
             y: "-100%",

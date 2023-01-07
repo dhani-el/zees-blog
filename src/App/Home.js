@@ -347,7 +347,7 @@ const Home = () => {
                 <div className="review-cards">
                     <div className="review-card">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <p className="reviewer">
+                        <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
@@ -357,11 +357,11 @@ const Home = () => {
                                     verified artist
                                 </div>
                             </div>
-                        </p>
+                        </div>
                     </div>
                     <div className="review-card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <p className="reviewer">
+                        <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
@@ -371,11 +371,11 @@ const Home = () => {
                                     verified artist
                                 </div>
                             </div>
-                        </p>
+                        </div>
                     </div>
                     <div className="review-card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <p className="reviewer">
+                        <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
@@ -385,7 +385,7 @@ const Home = () => {
                                     verified artist
                                 </div>
                             </div>
-                        </p>
+                        </div>
                     </div>
                     <div className="circle"></div>
                 </div>

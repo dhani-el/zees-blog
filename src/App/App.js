@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {createContext,useContext,useState} from 'react'
+// import {createContext,useContext,useState} from 'react'
 import NavBar from '../Navbar/Navbar';
 import Home from './Home';
 import Blog from '../Blog-page/Blog';
@@ -15,9 +15,9 @@ import Error from '../Error-page/Error';
 import Preloader from '../Preloader/Preloader';
 
 
-const paginationContext = createContext(null)
+// const paginationContext = createContext(null)
 function App() {
-const [queryValue,setQueryValue] = useState(null);
+// const [queryValue,setQueryValue] = useState(null);
   return (
     
       <Router>

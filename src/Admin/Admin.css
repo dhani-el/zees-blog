@@ -6,6 +6,8 @@
     margin: auto;
     margin-top: 5rem;
     cursor: default;
+    position: relative;
+    z-index: 5;
 }
 .admin-container .h2 {
     font-size: 2em;

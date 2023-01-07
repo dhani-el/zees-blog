@@ -16,7 +16,7 @@ import Footer from "../App/Footer";
 
 
 const Blog = () => {
-    const { data:blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/0');
+    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs');
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     // 
@@ -30,27 +30,28 @@ const Blog = () => {
     }
     let toggleClassCheck = btnState ? 'sub-active' : null;
 
-    return ( 
+    return (
         <div className="blogs-container">
             <div className={`sub-msg-alert ${toggleClassCheck}`}>
                 fuck you
             </div>
             <div className="search-bar">
-                    <input onChange={handleChange} placeholder="Search" type="search"/>
-                    <button>
-                        <img src={searchBtn} alt="" />
-                    </button>
+                <input onChange={handleChange} placeholder="Search" type="search" />
+                <button>
+                    <img src={searchBtn} alt="" />
+                </button>
             </div>
-            {IsPending && <div className="load-msg">Loading...</div> }
-            {error && <div className="err-msg">{error}</div> }
-            {blogs && <Bloglist blogs={blogs.filter((blog)=> {
-                if (searchTerm == '') {
-                    return blog
-                } else if (blog.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                    return blog
-                } 
-                // create search terms for the other blog details using else if
-            })}/>}
+            {IsPending && <div className="load-msg">Loading...</div>}
+            {error && <div className="err-msg">{error}</div>}
+            {blogs && <Bloglist
+                blogs={blogs.filter((blog) => {
+                    if (searchTerm === '') {
+                        return blog
+                    } else if (blog.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return blog
+                    }
+                })}
+            />}
             <div className="newsletter-stn">
                 <div className="graphics">
                     <img className="m" src={m} alt="" />
@@ -75,7 +76,7 @@ const Blog = () => {
                         </div>
                     </div>
                     <div className="img-tile2">
-                    <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
@@ -99,17 +100,18 @@ const Blog = () => {
                     <img src={m2} alt="" />
                     <h2>subscribe to our newsletter</h2>
                     <p>Keep in the loop with the latest gossip and happenings around the world</p>
-                    <form  onSubmit={handleSubmit}>
-                        <input type="email" name="" id="" placeholder="Email"/>
+                    <form onSubmit={handleSubmit}>
+                        <input type="email" name="" id="" placeholder="Email" />
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
-     );
+    );
 }
- 
+
 export default Blog;
 
 // if you still use facebook we want better for you
+// https://zeesblog.onrender.com/blogs/0
