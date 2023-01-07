@@ -8,10 +8,12 @@ import React, { useState} from "react";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data:blog, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/post/blogTitle/' + id);
+    // console.log(id);
+    const { data:blog, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/post/${id}`);
+    // console.log(blog);
     const history = useHistory();
     const handleDelete = () => {
-        fetch('https://zeesblog.onrender.com/blogs/post/blogTitle/' + id, {
+        fetch('https://zeesblog.onrender.com/blogs/post/' + id, {
             method: 'DELETE'
         })
             .then(() => {
@@ -37,15 +39,15 @@ const BlogDetails = () => {
                             <div className="name">susan omono</div>
                         </div>
                         <div className="blog-stats">
-                            <div className="date">{blog.date}</div>
+                            <div className="date">{blog[0].date}</div>
                             <span className="dot">.</span>
-                            <div className="read-time">{blog.readTime}</div>
+                            <div className="read-time">{blog[0].readTime}</div>
                         </div>
                     </div>
                     <Share handleCopy={handleCopy}/>
                 </div>
-                <h2>{ blog.title }</h2>
-                <p>{ blog.body }</p>
+                <h2>{ blog[0].title }</h2>
+                <p>{ blog[0].body }</p>
                 <button onClick={handleDelete}>delete blog</button>
             </article> }
             { copied && <div className="copy-alert">Copied to Clipboard!</div> }
