@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import '../Blog-page/blog.css';
-import man from "../Images/man.jpeg"
 
     const Bloglist = ({ blogs }) => {
     return ( 
@@ -23,7 +22,7 @@ import man from "../Images/man.jpeg"
                                 </div>
                             </div>
                             <div className="blog-preview-img-wraper">
-                                <img src={man} alt="" />
+                                <img src={blog.image} alt="" />
                             </div>
                         </div>
                     ))}

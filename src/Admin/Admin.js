@@ -9,10 +9,11 @@ const Admin = () => {
     const [date, setDate] = useState();
     const [IsPending, setIsPending] = useState(false);
     const history = useHistory();
+    const [image, setImage] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { title, body, genre };
+        const blog = { title, body, genre, readTime, date, image };
         fetch('https://zeesblog.onrender.com/admin/post', {
             method: 'POST',
             headers: { "Content-Type": "application/json"},
@@ -50,11 +51,17 @@ const Admin = () => {
                     required
                     onChange={(e) => setDate(e.target.value)}
                 />
+                <label htmlFor="">Upload Image</label>
+                <input type="file" name="" id=""
+                    required
+                    onChange={(e) => setImage(e.target.value)}
+                 />  
                 <label htmlFor="">blog body</label>
                 <textarea
                     required
                     onChange={(e) => setBody(e.target.value)}
-                ></textarea>          
+                ></textarea>
+     
               {!IsPending &&  <button>add blog</button>}
               {IsPending &&  <button disabled>adding blog</button>}
             </form>
