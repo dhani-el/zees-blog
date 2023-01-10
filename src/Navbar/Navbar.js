@@ -7,7 +7,7 @@ const NavBar = () => {
             <div className="logo-wrapper">Susan o.</div>
             <ul>
                 <li><Link to="/">home</Link></li>
-                <li><Link to="/blogs">blog</Link></li>
+                <li><Link to="/blogs/0">blog</Link></li>
                 <li><Link to="/about">about</Link></li>
                 <li><Link to="/signup"><button> sign up</button></Link></li>
             </ul>

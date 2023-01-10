@@ -11,13 +11,19 @@ const Admin = () => {
     const history = useHistory();
     const [image, setImage] = useState();
 
+    const data = new FormData();
+    data.append("title",title);
+    data.append("body",body);
+    data.append("genre",genre);
+    data.append("readTime",readTime);
+    data.append("date",date);
+    data.append("image",image);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { title, body, genre, readTime, date, image };
         fetch('https://zeesblog.onrender.com/admin/post', {
             method: 'POST',
-            headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(blog)
+            body: data,
         })
             .then(() => {
                 setIsPending(false);
@@ -52,9 +58,9 @@ const Admin = () => {
                     onChange={(e) => setDate(e.target.value)}
                 />
                 <label htmlFor="">Upload Image</label>
-                <input type="file" name="" id=""
+                <input type="file" name="image" id="image"
                     required
-                    onChange={(e) => setImage(e.target.value)}
+                    onChange={(e) => setImage(e.target.files[0])}
                  />  
                 <label htmlFor="">blog body</label>
                 <textarea
