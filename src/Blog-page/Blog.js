@@ -13,10 +13,12 @@ import Usefetch from "../TechnicalComponents/Usefetch";
 import { useState } from "react";
 import searchBtn from "../Images/searchbtn.png";
 import Footer from "../App/Footer";
+import { useParams } from "react-router-dom";
 
 
 const Blog = () => {
-    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/0');
+    const { id } = useParams();
+    const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`);
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     // 

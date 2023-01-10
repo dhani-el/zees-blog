@@ -35,7 +35,7 @@ function App() {
               <Route path="/signup">
                 <Signup/>
               </Route>
-              <Route path="/blogs">
+              <Route path="/blogs/:id">
                 <Blog />
               </Route>
               <Route path="/blog/:id">

@@ -13,7 +13,7 @@ const BlogDetails = () => {
     // console.log(blog);
     const history = useHistory();
     const handleDelete = () => {
-        fetch('https://zeesblog.onrender.com/blogs/post/${id}', {
+        fetch(`https://zeesblog.onrender.com/blogs/post/${id}`, {
             method: 'DELETE'
         })
             .then(() => {
