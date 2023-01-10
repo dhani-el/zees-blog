@@ -13,6 +13,7 @@ import Share from '../TechnicalComponents/Share';
 import Cursor from '../TechnicalComponents/cursor';
 import Error from '../Error-page/Error';
 import Preloader from '../Preloader/Preloader';
+import Signup from '../Auth-Component/Sign-up/Signup';
 
 
 // const paginationContext = createContext(null)
@@ -30,6 +31,9 @@ function App() {
               <Route exact path="/">
                 <Preloader/>
                 <Home/>
+              </Route>
+              <Route path="/signup">
+                <Signup/>
               </Route>
               <Route path="/blogs">
                 <Blog />

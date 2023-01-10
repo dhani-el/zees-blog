@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import './Signup.css';
 
 const Signup = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const updateName = (e) => {
         setName(e.target.value)
@@ -18,7 +21,7 @@ const Signup = () => {
     let userInfo = { name, email, password }
 
     const signUp = async () => {
-        let result = await fetch(url, {
+        let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
             body: JSON.stringify(userInfo),
             headers: {
@@ -30,14 +33,20 @@ const Signup = () => {
         console.log("result", result);
         // store result in local storage
         // push hiistory to homepage
+            history.push("/");
     }
+
+    const demo = () => {
+        history.push("/");
+    }
+
     return ( 
         <div className="signup-container">
-            <form action="">
-                <input type="text" value={name} onChange={updateName}/>
-                <input type="email" value={email} onChange={updateEmail}/>
-                <input type="password" value={password} onChange={updatePassword}/>
-                <button>sign up</button>
+            <form action="" onSubmit={signUp}>
+                <input type="text" value={name} onChange={updateName} placeholder='Name'/>
+                <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
+                <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
+                <button type="submit" onClick={demo}>sign up</button>
             </form>
         </div>
      );

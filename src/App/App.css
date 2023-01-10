@@ -50,7 +50,7 @@
 } 
 .circle-container {
   position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 .circle-stn {
   position: absolute;
