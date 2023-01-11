@@ -1,0 +1,10 @@
+.blog-preview-img-wraper {
+    width: 15vw;
+    height: 15vw;
+}
+.blog-preview-img-wraper div {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}

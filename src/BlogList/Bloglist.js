@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import '../Blog-page/blog.css';
+import './BlogList.css';
 
     const Bloglist = ({ blogs }) => {
     return ( 
@@ -22,7 +23,7 @@ import '../Blog-page/blog.css';
                                 </div>
                             </div>
                             <div className="blog-preview-img-wraper">
-                                <img src={blog.image} alt="" />
+                                <div style={{ backgroundImage: `url(${blog.image})` }}></div>
                             </div>
                         </div>
                     ))}

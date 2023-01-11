@@ -27,7 +27,7 @@ const Admin = () => {
         })
             .then(() => {
                 setIsPending(false);
-                history.push("/")
+                history.push("/blogs/:id");
             })
     }
 

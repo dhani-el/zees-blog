@@ -12,7 +12,7 @@ const Share = ({handleCopy}) => {
     const [pageURL, setPageURL] = useState(0);
     useEffect(() => {
       setPageURL(window.location.href);
-    });
+    }, []);
     return ( 
         <div className="share-container">
             <TwitterShareButton data-tooltip="Share to Twitter" className="share-icons tweet-share" url={pageURL}>
