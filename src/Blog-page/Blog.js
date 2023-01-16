@@ -1,13 +1,3 @@
-import m2 from "../Images/m2.png";
-import arrow from "../Images/Arrow 1.png";
-import newsletter1 from "../Images/newsletter1.png";
-import newsletter2 from "../Images/newsletter2.png";
-import avatar1 from "../Images/avatar1.png";
-import avatar2 from "../Images/avatar2.png";
-import avatar3 from "../Images/avatar3.png";
-import avatar4 from "../Images/avatar4.png";
-import like from "../Images/like.png";
-import m from "../Images/m.png";
 import Bloglist from '../BlogList/Bloglist';
 import Usefetch from "../TechnicalComponents/Usefetch";
 import { useState } from "react";
@@ -17,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 const Blog = () => {
-    const { id } = useParams();
+    let { id } = useParams();
     const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`);
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -34,8 +24,8 @@ const Blog = () => {
 
     return (
         <div className="blogs-container">
-            <div className={`sub-msg-alert ${toggleClassCheck}`}>
-                fuck you
+            <div className="sticky">
+                <Footer />
             </div>
             <div className="search-bar">
                 <input onChange={handleChange} placeholder="Search" type="search" />
@@ -54,61 +44,6 @@ const Blog = () => {
                     }
                 })}
             />}
-            <div className="newsletter-stn">
-                <div className="graphics">
-                    <img className="m" src={m} alt="" />
-                    <div className="img-tile1">
-                        <img className="newsletter-img-wrappers" src={newsletter2} alt="" />
-                        <div className="graphics-texts">
-                            <p>susan</p>
-                            <p>writer</p>
-                            <div className="readers-stats">
-                                <div className="user-avatars">
-                                    <img src={avatar1} alt="" />
-                                    <img src={avatar2} alt="" />
-                                    <img src={avatar3} alt="" />
-                                    <img src={avatar4} alt="" />
-                                </div>
-                                <span className="readers-no-stats">1.1389</span>
-                                <div className="likes">
-                                    <img src={like} alt="" />
-                                    <span>11351</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="img-tile2">
-                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
-                        <div className="graphics-texts">
-                            <p>susan</p>
-                            <p>writer</p>
-                            <div className="readers-stats">
-                                <div className="user-avatars">
-                                    <img src={avatar1} alt="" />
-                                    <img src={avatar2} alt="" />
-                                    <img src={avatar3} alt="" />
-                                    <img src={avatar4} alt="" />
-                                </div>
-                                <span className="readers-no-stats">1.1389</span>
-                                <div className="likes">
-                                    <img src={like} alt="" />
-                                    <span>11351</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="newsletter-sub-stn">
-                    <img src={m2} alt="" />
-                    <h2>subscribe to our newsletter</h2>
-                    <p>Keep in the loop with the latest gossip and happenings around the world</p>
-                    <form onSubmit={handleSubmit}>
-                        <input type="email" name="" id="" placeholder="Email" />
-                        <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
-                    </form>
-                </div>
-            </div>
-            <Footer />
         </div>
     );
 }
