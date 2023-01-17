@@ -24,13 +24,14 @@ function App() {
     <Router>
       <div className="App">
 
-        <Circle />
+        
         <Cursor />
         <div className="content">
           <Switch>
             <Route exact path="/">
               <Preloader />
               <NavBar />
+              <Circle />
               <Home />
             </Route>
             <Route path="/signup">
@@ -38,18 +39,22 @@ function App() {
             </Route>
             <Route path="/blogs/:id">
               <NavBar />
+              <Circle />
               <Blog />
             </Route>
             <Route path="/blog/:id">
               <NavBar/>
+              <Circle />
               <BlogDetails />
             </Route>
             <Route path="/about">
               <NavBar/>
+              <Circle />
               <About />
             </Route>
             <Route path="/genre">
               <NavBar/>
+              <Circle />
               <Genre />
             </Route>
             <Route path="/share">

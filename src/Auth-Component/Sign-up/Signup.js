@@ -43,11 +43,16 @@ const Signup = () => {
     return ( 
         <div className="signup-container">
             <form action="" onSubmit={signUp}>
+                <h2>Sign Up for ZEE</h2>
+                <p>Become a part of our family.</p>
                 <input type="text" value={name} onChange={updateName} placeholder='Name'/>
                 <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
                 <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
-                <button type="submit" onClick={demo}>sign up</button>
+                <button type="submit" onClick={demo}>sign me up!</button>
             </form>
+            <div className="container2">
+                demo
+            </div>
         </div>
      );
 }
