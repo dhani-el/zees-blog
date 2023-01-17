@@ -1,3 +1,6 @@
+* {
+    cursor: default;
+}
 .admin-container {
     max-width: 70%;
     justify-content: center;
