@@ -18,49 +18,60 @@ import Signup from '../Auth-Component/Sign-up/Signup';
 
 // const paginationContext = createContext(null)
 function App() {
-// const [queryValue,setQueryValue] = useState(null);
+  // const [queryValue,setQueryValue] = useState(null);
   return (
-    
-      <Router>
-          <div className="App">
-            <NavBar/>
-            <Circle/>
-            <Cursor/>
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Preloader/>
-                <Home/>
-              </Route>
-              <Route path="/signup">
-                <Signup/>
-              </Route>
-              <Route path="/blogs/:id">
-                <Blog />
-              </Route>
-              <Route path="/blog/:id">
-                <BlogDetails />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/genre">
-                <Genre />
-              </Route>
-              <Route path="/share">
-                <Share />
-              </Route>
-              <Route path="/admin">
-                <Admin />
-              </Route>
-              <Route path="">
-                <Error />
-              </Route>
-            </Switch>
-          </div>
-          </div>
+
+    <Router>
+      <div className="App">
+
+        
+        <Cursor />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Preloader />
+              <NavBar />
+              <Circle />
+              <Home />
+            </Route>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/blogs/:id">
+              <NavBar />
+              <Circle />
+              <Blog />
+            </Route>
+            <Route path="/blog/:id">
+              <NavBar/>
+              <Circle />
+              <BlogDetails />
+            </Route>
+            <Route path="/about">
+              <NavBar/>
+              <Circle />
+              <About />
+            </Route>
+            <Route path="/genre">
+              <NavBar/>
+              <Circle />
+              <Genre />
+            </Route>
+            <Route path="/share">
+              <Share />
+            </Route>
+            <Route path="/admin">
+              <NavBar/>
+              <Admin />
+            </Route>
+            <Route path="">
+              <Error />
+            </Route>
+          </Switch>
+        </div>
+      </div>
     </Router>
-   
+
   );
 }
 

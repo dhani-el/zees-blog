@@ -315,81 +315,6 @@ const Home = () => {
                         </div>
                 </div>
             </div>
-            <div className="features-stn">
-                <h2>features</h2>
-                <p>Keep in the loop with the latest gossip and happenings around the world</p>
-                <div className="features-cards">
-                    <div className="feature-card">
-                        <img src={ f1 } alt="" />
-                        <div className="feature-description">
-                            <h3>Poems</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius culpa minus dolor provident sit quam.</p>
-                        </div>
-                    </div>
-                    <div className="feature-card">
-                        <img src={ f2 } alt="" />
-                        <div className="feature-description">
-                            <h3>Series</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto, vero rerum sequi quam laborum?</p>
-                        </div>
-                    </div>
-                    <div className="feature-card">
-                        <img src={ f3 } alt="" />
-                        <div className="feature-description">
-                            <h3>true life</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita possimus eum, minima animi eius.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="reviews-stn">
-                <h2>reviews</h2>
-                <div className="review-cards">
-                    <div className="review-card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="review-card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="review-card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="circle"></div>
-                </div>
-            </div>
             <div className="newsletter-stn">
                 <div className="graphics">
                     <img className="m" src={m} alt="" />
@@ -442,6 +367,54 @@ const Home = () => {
                         <input required type="email" name="" id="" placeholder="Email"/>
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
+                </div>
+            </div>
+            <div className="reviews-stn">
+                <h2>reviews</h2>
+                <div className="review-cards">
+                    <div className="review-card">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <div className="reviewer">
+                            <img src="" alt="" />
+                            <div className="reviewer-details">
+                                <div className="reviewer-name">
+                                    Tiamiyu Mubarak
+                                </div>
+                                <div className="job-description">
+                                    verified artist
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <div className="reviewer">
+                            <img src="" alt="" />
+                            <div className="reviewer-details">
+                                <div className="reviewer-name">
+                                    Tiamiyu Mubarak
+                                </div>
+                                <div className="job-description">
+                                    verified artist
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <div className="reviewer">
+                            <img src="" alt="" />
+                            <div className="reviewer-details">
+                                <div className="reviewer-name">
+                                    Tiamiyu Mubarak
+                                </div>
+                                <div className="job-description">
+                                    verified artist
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="circle"></div>
                 </div>
             </div>
             <Footer/>
