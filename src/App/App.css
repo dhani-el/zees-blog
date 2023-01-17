@@ -106,10 +106,9 @@
   display: flex;
   padding: 5rem;
   justify-content: space-between;
-  height: 105vh;
+  height: 100vh;
   align-items: center;
-  margin-top: -5rem;
-  background-color: #FAF9F6;
+  margin-top: -3rem;
 }
 .hero-stn-texts {
   width: 40vw;
@@ -170,7 +169,6 @@
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: #FAF9F6;
   z-index: 9;
 }
 .hero-stn-img-wrapper img {
@@ -217,72 +215,6 @@
   margin-bottom: .2em;
   border-radius: 50%;
 }
-.features-stn {
-  background: #449183;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  color: #f8fcfb;
-}
-.features-stn h2{
-  color: #f8fcfb;
-}
-.features-stn h2,
-.reviews-stn h2 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: 350;
-  text-transform: capitalize;
-}
-.features-stn p {
-  text-align: center;
-  font-size: 1.4em;
-  font-weight: 300;
-  margin-top: -1rem;
-  color: #f8fcfb;
-}
-.features-cards {
-  display: flex;
-  justify-content: center;
-  padding: 0 5rem;
-  margin-top: 3.5rem;
-  gap: 2rem;
-}
-.feature-card:nth-child(1){
-  position: relative;
-}
-.feature-card:nth-child(1)::before{
-  content: '';
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  background: rgba(255, 165, 0, 0.32);
-  position: absolute;
-  top: -2.5rem;
-  left: -2.5rem;
-  z-index: -1;
-}
-.feature-card {
-  background-color: #17473E;
-  width: 21rem;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-}
-.feature-card img {
-  max-width: 100%;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-.feature-card h3 {
-  text-align: center;
-  font-size: 1.7em;
-  margin-top: 4px;
-  font-weight: 400;
-}
-.feature-card p {
-  font-weight: 200;
-  font-size: 1.2em;
-  padding: 0 2em;
-}
 .reviews-stn {
   padding: 0 3rem 10rem;
   position: relative;
@@ -319,9 +251,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 7rem;
   padding-right: 5rem;
   padding-bottom: 6rem;
+  margin-top: 1rem;
   background-color: #449183;
   color: #f8fcfb;
 }
@@ -514,6 +446,11 @@ footer article:nth-child(1) p {
 .socials-wrapper a:nth-child(1) img {
   position: relative;
   top: 3px;
+}
+.home-stn footer{
+  background-color: #449183;
+  color: #f8fcfb;
+  margin-top: 1rem;
 }
 footer article:nth-child(2) {
   display: flex;
