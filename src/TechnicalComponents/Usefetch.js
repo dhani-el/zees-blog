@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Usefetch = (url) => {
+const Usefetch = (url , id) => {
     const [data, setdata] = useState(null);
     const [IsPending, setIsPending] = useState(true);
     const [error,  setError] = useState(null);
@@ -25,7 +25,7 @@ const Usefetch = (url) => {
             })
         }, 1000);
         return () => abortCont.abort();
-    }, []);
+    }, [id]);
     
     return ( {data, IsPending, error} );
 }

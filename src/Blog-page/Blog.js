@@ -1,17 +1,21 @@
 import Bloglist from '../BlogList/Bloglist';
 import Usefetch from "../TechnicalComponents/Usefetch";
-import { useState } from "react";
+import Pagination from '../pagination/pagination';
+import { useState , useEffect} from "react";
 import searchBtn from "../Images/searchbtn.png";
 import Footer from "../App/Footer";
-import { useParams } from "react-router-dom";
+import { useParams , useHistory, Link} from "react-router-dom";
+
 
 
 const Blog = () => {
     let { id } = useParams();
-    const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`);
+    const history = useHistory()
+    const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`, id);
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     // 
+    // useEffect(function(){},[])
 
     const handleSubmit = (e) => {
         setBtnstate(true);
@@ -21,7 +25,18 @@ const Blog = () => {
         setSearchTerm(e.target.value);
     }
     let toggleClassCheck = btnState ? 'sub-active' : null;
-
+    function next(){
+        const nextId  = Number(id) + 1
+        // console.log(nextId);
+        history.push(`/blogs/${nextId}`);
+    }
+    function previouse(){
+        const previouseId = Number(id) -1
+        if (id <= 0) {
+         return
+        }
+        history.push("/blogs/"+previouseId);
+    }
     return (
         <div className="blogs-container">
             <div className="sticky">
@@ -44,6 +59,7 @@ const Blog = () => {
                     }
                 })}
             />}
+            <Pagination currentPage={id} next = {next} previouse={previouse}  />
         </div>
     );
 }
