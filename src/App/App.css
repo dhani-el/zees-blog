@@ -49,7 +49,7 @@
   display: none;
 } 
 .circle-container {
-  position: relative;
+  position: fixed;
   z-index: -1;
 }
 .circle-stn {
@@ -170,6 +170,7 @@
   height: 100%;
   width: 100%;
   z-index: 9;
+  background-color: white;
 }
 .hero-stn-img-wrapper img {
   max-width: 100%;

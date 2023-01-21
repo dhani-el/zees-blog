@@ -145,3 +145,24 @@
     position: relative;
     top: 3px;
   }
+  .pagination{
+      display: flex;
+      justify-content: center;
+      gap: 3vw;
+      margin-right: 30vw;
+      padding-bottom: 2rem;
+  }
+  .pagination button {
+    text-transform: capitalize;
+    background-color: #17473E;
+    color: white;
+    border: none;
+    padding: .5em;
+    font-size: 1em;
+    transition: 200ms;
+  }
+  .pagination button:hover,
+  .pagination button:active {
+      border-radius: 7px;
+      transition: 200ms;
+  }

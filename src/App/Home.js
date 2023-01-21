@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import hero from "../Images/hero.png";
-import f1 from "../Images/f1.png";
-import f2 from "../Images/f2.png";
-import f3 from "../Images/f3.png";
 import lap from "../Images/lap.png";
 import newsletter1 from "../Images/newsletter1.png";
 import newsletter2 from "../Images/newsletter2.png";

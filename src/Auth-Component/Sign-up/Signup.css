@@ -9,28 +9,28 @@
     justify-content: center;
     padding: 0 5vw;
 }
-form h2 {
+.signup-container form h2 {
     font-weight: 600;
     font-size: 2.7vw;
     padding-bottom: 0;
     margin: 0;
 }
-form p {
+.signup-container form p {
     font-size: 1.5vw;
     font-weight: 300;
     margin-bottom: 5vh;
 }
-input, button {
+.signup-container input, .signup-container button {
     height: 10vh;
     margin-bottom: 3vh;
     border-radius: 5px;
     outline: none;
 }
-input {
+.signup-container .signup-containerinput {
     border: 1px solid rgb(0, 0, 0, 0.5);
     padding: 1vw;
 }
-button {
+.signup-container button {
     border: none;
     text-transform: capitalize;
     background-color: #17473E;
@@ -39,11 +39,11 @@ button {
     font-size: 1.2vw;
     transition: 200ms;
 }
-button:hover,
-button:focus {
+.signup-container button:hover,
+.signup-container button:focus {
   border-radius: 30px;
   transition: 200ms;
 }
-.container2 {
+.signup-container .container2 {
     background-color: rgb(19, 21, 21, 0.9);
 }

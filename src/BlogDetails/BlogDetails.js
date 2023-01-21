@@ -17,7 +17,7 @@ const BlogDetails = () => {
             method: 'DELETE'
         })
             .then(() => {
-                history.push("/blogs")
+                history.push("/blogs/0")
             })
     }
     const [copied, setCopied] = useState(false);

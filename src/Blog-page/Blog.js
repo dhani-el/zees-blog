@@ -5,6 +5,7 @@ import { useState , useEffect} from "react";
 import searchBtn from "../Images/searchbtn.png";
 import Footer from "../App/Footer";
 import { useParams , useHistory, Link} from "react-router-dom";
+import Skeleton from '../Skeleton-Screens/Skeleton';
 
 
 
@@ -48,7 +49,7 @@ const Blog = () => {
                     <img src={searchBtn} alt="" />
                 </button>
             </div>
-            {IsPending && <div className="load-msg">Loading...</div>}
+            {IsPending && <Skeleton/> }
             {error && <div className="err-msg">{error}</div>}
             {blogs && <Bloglist
                 blogs={blogs.filter((blog) => {
