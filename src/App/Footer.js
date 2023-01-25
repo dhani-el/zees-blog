@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <article>
                 <div className="logo">Susan o.</div>
-                <p>Keep in the loop with the latest gossip and happenings.</p>
+                <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                 <div className="socials-wrapper">
                     <a href="https://instagram.com/existentialcrisisgirl_?r=nametag" target="_blank" rel="noopener noreferrer" className="socials">
                         <img src={insta} alt="" />

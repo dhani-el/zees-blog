@@ -19,7 +19,7 @@ import './BlogList.css';
                                         <Link to={`/genre?name=${blog.genre}`}>
                                             <div className="genre">{blog.genre}</div>   
                                         </Link>
-                                        <span className="read-time">{blog.readTime}</span>
+                                        <span className="read-time">{blog.readTime} read</span>
                                     </div>
                                 </div>
                             </div>

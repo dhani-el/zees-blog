@@ -9,3 +9,32 @@
     padding-left: 2rem;
     padding-bottom: 3rem;
 }
+.genre-container-2 {
+    display: flex;
+    justify-content: space-between;
+}
+.genre-container-2 .bloglist {
+    width: 50%;
+}
+.genre-container-2 .bloglist .blog-preview {
+    width: 100%;
+}
+.genre-container-2 .footer {
+    width: 30%;
+    border-left: .05px solid rgb(68, 145, 131, 0.3);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.genre-container-2 .footer article {
+    width: 100%;
+}
+.genre-container-2 .blog-stats {
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+}
+.genre-container-2 .blog-stats .read-time {
+    color: rgba(58, 58, 58, 0.9);
+}

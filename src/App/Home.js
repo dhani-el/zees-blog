@@ -17,6 +17,7 @@ import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
+import 'boxicons';
 const Home = () => {
 
     let container = useRef(null);
@@ -25,12 +26,12 @@ const Home = () => {
 
     const tl = new TimelineLite();
 
-    useEffect(()=> {
-        tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" }}).to(
+    useEffect(() => {
+        tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,
             1,
             { height: "0%", ease: Power2.easeInOut, delay: 6 }
-        ).to(image, 2, {scale: 1, ease: Power2.easeInOut, delay: -1.6});
+        ).to(image, 2, { scale: 1, ease: Power2.easeInOut, delay: -1.6 });
         const split = new SplitText("#split-text", {
             type: "lines",
             linesClass: "lineChildren"
@@ -63,7 +64,8 @@ const Home = () => {
             ease: "power2",
             delay: 6.6
         });
-    }, [])    
+        window.scrollTo(0, 0);
+    }, [])
     const [btnState, setBtnstate] = useState(false);
 
     const handleSubmit = (e) => {
@@ -71,7 +73,7 @@ const Home = () => {
         e.preventDefault();
     }
     let toggleClassCheck = btnState ? 'sub-active' : null;
-    return ( 
+    return (
         <div className="home-stn">
             <div className={`sub-msg-alert ${toggleClassCheck}`}>
                 fuck you
@@ -80,236 +82,236 @@ const Home = () => {
                 <div className="hero-stn-texts">
                     <h1 id="split-text">Confused about living as a twenty<span id="raleway">-something</span>? You're not alone!</h1>
                     <p id="split-text2">Get in touch with Zee’s lifestyle rants for the imperfect twenty-somethings!</p>
-                    <Link to="/blogs">explore</Link>
+                    <Link to="/blogs/0">explore</Link>
                 </div>
                 <div className="hero-stn-img-wrapper2">
-                    <div  ref={el => container = el} className="hero-stn-img-wrapper">
-                        <img ref={el => image = el} src={ lap } alt="" />
+                    <div ref={el => container = el} className="hero-stn-img-wrapper">
+                        <img ref={el => image = el} src={lap} alt="" />
                     </div>
-                        <div className="ellipses1">
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
+                    <div className="ellipses1">
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
-                        <div className="ellipses2">
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div className="ellipse">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div className="ellipses2">
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="ellipse">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="newsletter-stn">
@@ -336,7 +338,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="img-tile2">
-                    <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
@@ -359,54 +361,47 @@ const Home = () => {
                 <div className="newsletter-sub-stn">
                     <img src={m2} alt="" />
                     <h2>subscribe to our newsletter</h2>
-                    <p>Keep in the loop with the latest gossip and happenings around the world</p>
+                    <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit}>
-                        <input required type="email" name="" id="" placeholder="Email"/>
+                        <input required type="email" name="" id="" placeholder="Email" />
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
                 </div>
             </div>
             <div className="reviews-stn">
-                <h2>reviews</h2>
                 <div className="review-cards">
                     <div className="review-card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <p><box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
                         <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
+                                    -Tiamiyu Mubarak
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="review-card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <p><box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
                         <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
+                                    -Tiamiyu Mubarak
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="review-card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
+                        <p>
+                            <box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!
+                        </p>
                         <div className="reviewer">
                             <img src="" alt="" />
                             <div className="reviewer-details">
                                 <div className="reviewer-name">
-                                    Tiamiyu Mubarak
-                                </div>
-                                <div className="job-description">
-                                    verified artist
+                                    -Tiamiyu Mubarak
                                 </div>
                             </div>
                         </div>
@@ -414,9 +409,9 @@ const Home = () => {
                     <div className="circle"></div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
-     );
+    );
 }
- 
+
 export default Home;

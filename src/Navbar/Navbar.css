@@ -31,6 +31,7 @@
       text-decoration: none;
       color: inherit;
       position: relative;
+      cursor: pointer;
   } 
   .navbar a::before {
     content: '';
@@ -48,6 +49,9 @@
     width: 25px;
     transition: all ease-in-out 0.2s;
   }
+  #signup::before{
+    width: 0px;
+  }
   .navbar button {
     background-color: #17473E;
     outline: none;
@@ -58,7 +62,7 @@
     padding: .5em 1.5em;
     font-weight: 570;
     border-radius: 4px;
-    cursor: none;
+    cursor: pointer;
     transition: all ease-in-out 0.4s;
   }
 .navbar button:hover,

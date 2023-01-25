@@ -2,34 +2,42 @@
     display: grid;
     grid-template-columns: 40vw 60vw;
     height: 100vh;
+    position: relative;
 }
+
 .signup-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 5vw;
 }
+
 .signup-container form h2 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2.7vw;
     padding-bottom: 0;
     margin: 0;
 }
+
 .signup-container form p {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: 300;
     margin-bottom: 5vh;
 }
-.signup-container input, .signup-container button {
-    height: 10vh;
+
+.signup-container input,
+.signup-container button {
+    height: 7vh;
     margin-bottom: 3vh;
     border-radius: 5px;
     outline: none;
 }
-.signup-container .signup-containerinput {
-    border: 1px solid rgb(0, 0, 0, 0.5);
+
+.signup-container input {
+    border: 1px solid #CBCBCB;
     padding: 1vw;
 }
+
 .signup-container button {
     border: none;
     text-transform: capitalize;
@@ -39,11 +47,104 @@
     font-size: 1.2vw;
     transition: 200ms;
 }
+
 .signup-container button:hover,
 .signup-container button:focus {
-  border-radius: 30px;
-  transition: 200ms;
+    border-radius: 30px;
+    transition: 200ms;
 }
+
 .signup-container .container2 {
-    background-color: rgb(19, 21, 21, 0.9);
+    background-image: url(../../Images/signup.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+
+.signup-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.secondary-overlay {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    line-height: 3vw;
+}
+
+.secondary-overlay .quotes {
+    position: absolute;
+    width: 7vw;
+}
+
+.secondary-overlay .quotes img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.secondary-overlay .quotes:nth-child(1) {
+    top: -40%;
+    left: -20%;
+}
+
+.secondary-overlay .quotes:nth-child(2) {
+    transform: rotateZ(180deg);
+    bottom: -30%;
+    right: -5%;
+}
+
+.secondary-overlay .text {
+    font-size: 2.3vw;
+}
+
+.signup-container .marks {
+    position: absolute;
+    z-index: -1;
+}
+
+.signup-container .mark-1 {
+    left: 38%;
+    top: 0.2%;
+    width: 5vw;
+    height: 5vw;
+}
+.signup-container .mark-2 {
+    left: 22%;
+    top: 12%;
+    width: 4vw;
+    height: 4vw;
+}
+.signup-container .mark-2 img,
+.signup-container .mark-3 img,
+.signup-container .mark-4 img,
+.signup-container .mark-5 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.signup-container .mark-3 {
+    left: 2%;
+    bottom: 20%;
+    width: 4vw;
+    height: 4vw;
+}
+.signup-container .mark-4 {
+    left: 18%;
+    bottom: 7%;
+    width: 4vw;
+    height: 4vw;
+}
+.signup-container .mark-5 {
+    left: 33%;
+    bottom: 2%;
+    width: 4vw;
+    height: 4vw;
 }

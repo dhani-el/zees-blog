@@ -12,25 +12,11 @@ body {
 html, body, * {
   font-family: 'Lato', sans-serif;
 }
-* {
-  cursor: default;
-}
 body {
-  /* overflow-y: hidden;
-  animation: overflow 0.1s 5.9s forwards; */
   background-color: #f8fcfb;
   color: #28282B;
-  /* cursor: none; */
+  scroll-behavior: smooth;
 }
-/* @keyframes overflow {
-  0% {
-    overflow-y: hidden;
-  }
-  100% {
-    overflow-y: scroll;
-  }
-} */
-
 
 
 code {

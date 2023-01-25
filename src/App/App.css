@@ -23,10 +23,12 @@
   height: 30px;
   background: rgb(19, 21, 21);
   border-radius: 50%;
+  z-index: 99;
 }
 .secondary-cursor {
   width: 60px;
   height: 60px;
+  z-index: -1;
 }
 .cursor-background {
   width: 100%;
@@ -143,6 +145,7 @@
   position: relative;
   z-index: 2;
   font-size: 1.3em;
+  cursor: pointer;
   padding: .5em 1.5em;
   border-radius: 4px;
   font-weight: 600;
@@ -217,27 +220,25 @@
   border-radius: 50%;
 }
 .reviews-stn {
-  padding: 0 3rem 10rem;
+  padding: 6rem 4vw 10rem;
   position: relative;
+  color: black;
 }
 .review-cards {
   display: flex;
-  gap: 4rem;
-  color: #f8fcfb;
+  gap: 5vw;
 }
 .review-card {
-  background-color: #17473E ;
   border-radius: 12px;
-  padding: 2.5rem 1.8rem;
-  font-size: 1.2em;
-  font-weight: 330;
+  padding: 3vw;
+  font-size: 1.4vw;
+  font-weight: 400;
+  color: rgb(0, 0, 0, 0.8);
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
 }
 .reviewer-name {
-  font-weight: 450;
-}
-.job-description {
-  color:  #7D7D7D;
+  font-weight: 400;
+  color: rgb(0, 0, 0, 0.6);
 }
 .circle {
   width: 5rem;
@@ -403,6 +404,7 @@
   border-radius: 2px;
   font-size: 1em;
   font-weight: 300;
+  cursor: pointer;
   transition: 200ms;
 }
 .newsletter-sub-stn button:hover,
@@ -412,12 +414,14 @@
 }
 .newsletter-sub-stn button span {
   margin-right: 1em;
+  cursor: pointer;
 }
 .newsletter-sub-stn button img {
   position: relative;
   right: 0;
   top: 0;
   width: .8em;
+  cursor: pointer;
 }
 footer {
   background: #f8fcfb;;
@@ -436,17 +440,12 @@ footer article:nth-child(1) p {
 .socials-wrapper a {
   border-radius: 50%;
   background-color: #17473E;
-  padding: 10px;
+  padding: 2vw;
+  cursor: pointer;
 }
 .socials-wrapper img{
-  width: 1.2em;
-}
-.socials-wrapper a:nth-child(1) {
-  margin-right: 1rem;
-}
-.socials-wrapper a:nth-child(1) img {
-  position: relative;
-  top: 3px;
+  width: 1.2vw;
+  cursor: pointer;
 }
 .home-stn footer{
   background-color: #449183;

@@ -38,6 +38,9 @@ const Blog = () => {
         }
         history.push("/blogs/"+previouseId);
     }
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [id]);
     return (
         <div className="blogs-container">
             <div className="sticky">

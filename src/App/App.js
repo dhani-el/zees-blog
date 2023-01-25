@@ -43,7 +43,7 @@ function App() {
               <Blog />
             </Route>
             <Route path="/blog/:id">
-              <NavBar/>
+              {/* <NavBar/> */}
               <Circle />
               <BlogDetails />
             </Route>
