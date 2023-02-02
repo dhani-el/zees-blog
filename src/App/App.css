@@ -19,15 +19,15 @@
   animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
 }
 .main-cursor-background {
-  width: 30px;
-  height: 30px;
+  width: 2.5vw;
+  height: 2.5vw;
   background: rgb(19, 21, 21);
   border-radius: 50%;
   z-index: 99;
 }
 .secondary-cursor {
-  width: 60px;
-  height: 60px;
+  width: 5vw;
+  height: 5vw;
   z-index: -1;
 }
 .cursor-background {
@@ -106,7 +106,7 @@
 }
 .hero-stn {
   display: flex;
-  padding: 5rem;
+  padding: 0 6vw;
   justify-content: space-between;
   height: 100vh;
   align-items: center;
@@ -116,7 +116,7 @@
   width: 40vw;
 }
 .hero-stn-texts h1 {
-  font-size: 3rem;
+  font-size: 3.5vw;
   font-weight: 340;
 }
 #raleway {
@@ -132,10 +132,10 @@
   transform: translate(0, 3rem);
 }
 .hero-stn-texts p {
-  font-size: 1.5rem;
+  font-size: 2vw;
   font-weight: 300;
   margin-top: -1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 5vw;
 }
 .hero-stn-texts a {
   text-decoration: none;
@@ -144,7 +144,7 @@
   background-color: #17473E;
   position: relative;
   z-index: 2;
-  font-size: 1.3em;
+  font-size: 1.5vw;
   cursor: pointer;
   padding: .5em 1.5em;
   border-radius: 4px;
@@ -158,7 +158,7 @@
 }
 .hero-stn-img-wrapper {
   max-width: 40vw;
-  height: 28rem;
+  height: 29vw;
   position: relative;
   overflow: hidden !important;
   visibility: hidden;
@@ -188,17 +188,18 @@
 }
 .ellipses1 {
   position: absolute;
-  top: -1.7rem;
-  right: -1.8rem;
+  top: -5.7%;
+  right: -5.8%;
   animation: reveal 200ms ease-in-out 7.8s forwards;
   opacity: 0;
 }
 .ellipses2 {
   position: absolute;
-  bottom: 2rem;
-  left: -3rem;
+  bottom: 7%;
+  left: -8%;
   animation: reveal 200ms ease-in-out 7.8s forwards;
   opacity: 0;
+  visibility: hidden;
 }
 @keyframes reveal {
   0% {
@@ -210,13 +211,13 @@
 }
 .ellipse {
   display: flex;
-  gap: .2em;
+  gap: .2vw;
 }
 .ellipse div{
   background-color: #17473E;
-  width: 13px;
-  height: 11px;
-  margin-bottom: .2em;
+  width: 1.15vw;
+  height: 1vw;
+  margin-bottom: .2vw;
   border-radius: 50%;
 }
 .reviews-stn {
@@ -266,18 +267,18 @@
 .m {
   position: absolute;
   z-index: -1;
-  top: -8rem;
+  top: -29%;
   left: 6rem;
   filter: brightness(0) saturate(100%) invert(18%) sepia(11%) saturate(3794%) hue-rotate(122deg) brightness(91%) contrast(82%);
 }
 .img-tile1 {
-  width: 20rem;
-  height: 30rem;
+  width: 25vw;
+  height: 35vw;
   background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.4) 0.01%, rgba(196, 196, 196, 0.21) 100%, rgba(217, 217, 217, 0.2) 100%);
   backdrop-filter: blur(60px);
   border-radius: 7.88431px;
   transform: matrix(0.96, -0.3, 0.28, 0.96, 0, 0);
-  padding-top: .8em;
+  padding-top: .9vw;
   z-index: 3;
   position: relative;
 }
@@ -290,74 +291,74 @@
   border-radius: 7.88431px;
 }
 .graphics-texts {
-  padding: 1em;
+  padding: 1vw;
 }
 .graphics-texts p:nth-child(1) {
   color: #f8fcfb;
   text-transform: capitalize;
-  font-size: 1.2em;
+  font-size: 1.8vw;
 }
 .graphics-texts p:nth-child(2) {
   color: #f8fcfb;
   text-transform: capitalize;
-  font-size: 1.2em;
+  font-size: 1.7vw;
   font-family: 'Red Hat Text';
   font-style: normal;
   font-weight: 700;
-  line-height: 17px;
 }
 .readers-stats {
   position: relative;
 }
 .user-avatars {
   position: relative;
-  top: 1.3em;
+  top: 1.3vw;
 }
 .user-avatars img{
-  width: 1.5rem;
+  width: 1.5vw;
   position: absolute;
 }
 .user-avatars img:nth-child(2){
-  left: 1em;
+  left: 1vw;
 }
 .user-avatars img:nth-child(3){
-  left: 2em;
+  left: 2vw;
 }
 .user-avatars img:nth-child(4) {
-  left: 3em;
+  left: 3vw;
 }
 .readers-no-stats {
   position: relative;
-  left: 5em;
-  top: 1.3em;
+  left: 5vw;
+  top: 1.3vw;
+  font-size: 1.5vw;
 }
 .likes {
   position: absolute;
   right: 0;
-  bottom: -1;
+  bottom: -85%;
   /* margin-top: 1em; */
 }
 .likes img {
-  margin-right: .5em;
+  margin-right: .5vw;
 }
 .img-tile2 {
-  width: 15rem;
-  height: 25rem;
-  padding-top: .8em;
+  width: 20vw;
+  height: 35vw;
+  padding-top: .9vw;
   background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.2) 100%);
   backdrop-filter: blur(60px);
   border-radius: 5.49615px;
   transform: matrix(0.96, 0.3, -0.28, 0.96, 0, 0);
   position: absolute;
-  top: 2.4rem;
-  right: -9.1rem;
+  top: 10%;
+  right: -49%;
   z-index: 1;
 }
 .img-tile2 .likes {
-  font-size: .9em;
+  font-size: 1vw;
 }
 .img-tile2 .likes img {
-  width: .9em;
+  width: 1vw;
 }
 .newsletter-sub-stn {
   width: 45vw;
@@ -366,23 +367,23 @@
 }
 .newsletter-sub-stn img {
   position: absolute;
-  right: -5rem;
-  top: 3rem;
+  right: -15%;
+  top: 15%;
   filter: brightness(0) saturate(100%) invert(18%) sepia(11%) saturate(3794%) hue-rotate(122deg) brightness(91%) contrast(82%);
 }
 .newsletter-sub-stn h2 {
-  font-size: 2.5em;
+  font-size: 3vw;
   text-transform: capitalize;
   font-weight: 500;
   color: #f8fcfb;
 }
 .newsletter-sub-stn p {
-  font-size: 1.5em;
+  font-size: 1.8vw;
   font-weight: 340;
-  margin-top: -1rem;
+  margin-top: -1vw;
 }
 .newsletter-sub-stn form {
-  margin-top: 6rem;
+  margin-top: 8vw;
 }
 .newsletter-sub-stn input{
   width: 60%;
@@ -393,6 +394,7 @@
   background: #FFFFFF;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
+  font-size: 1vw;
 }
 .newsletter-sub-stn button {
   border: none;
@@ -402,7 +404,7 @@
   background: #FFFFFF;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
-  font-size: 1em;
+  font-size: 1.15vw;
   font-weight: 300;
   cursor: pointer;
   transition: 200ms;

@@ -9,7 +9,7 @@ const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useHistory();
+    // const history = useHistory();
 
     const updateName = (e) => {
         setName(e.target.value)
@@ -22,7 +22,7 @@ const Signup = () => {
     }
     let userInfo = { name, email, password }
 
-    const signUp = async () => {
+    const signUp = async (e) => {
         let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
             body: JSON.stringify(userInfo),
@@ -35,23 +35,19 @@ const Signup = () => {
         console.log("result", result);
         // store result in local storage
         // push hiistory to homepage
-            history.push("/");
-    }
-
-    const demo = () => {
-        history.push("/");
+            // history.push("/");
     }
 
     return ( 
         <div className="signup-container">
-            <form action="" onSubmit={signUp}>
+            <div className="form">
                 <h2>Sign Up for ZEE</h2>
                 <p>Become a part of our subscribers.</p>
                 <input type="text" value={name} onChange={updateName} placeholder='Name'/>
                 <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
                 <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
-                <button type="submit" onClick={demo}>sign me up!</button>
-            </form>
+                <button type="submit" onClick={signUp}>sign me up!</button>
+            </div>
             <div className="container2">
                 <div className="overlay"></div>
                 <div className="secondary-overlay">

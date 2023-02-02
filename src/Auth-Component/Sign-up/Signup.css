@@ -5,21 +5,21 @@
     position: relative;
 }
 
-.signup-container form {
+.signup-container .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 5vw;
 }
 
-.signup-container form h2 {
+.signup-container .form h2 {
     font-weight: 500;
     font-size: 2.7vw;
     padding-bottom: 0;
     margin: 0;
 }
 
-.signup-container form p {
+.signup-container .form p {
     font-size: 1.3vw;
     font-weight: 300;
     margin-bottom: 5vh;
