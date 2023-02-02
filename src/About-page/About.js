@@ -46,6 +46,7 @@ const About = () => {
             ease: "power2",
             delay: .5
         });
+        window.scrollTo(0,0);
     }, [])  
     const [btnState, setBtnstate] = useState(false);
 
@@ -133,7 +134,7 @@ const About = () => {
                 <div className="newsletter-sub-stn">
                     <img src={m2} alt="" />
                     <h2>subscribe to our newsletter</h2>
-                    <p>Keep in the loop with the latest gossip and happenings around the world</p>
+                    <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit}>
                         <input type="email" name="" id="" placeholder="Email"/>
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
