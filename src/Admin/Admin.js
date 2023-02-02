@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Admin.css";
-import { formatDistance } from 'date-fns';
+// import { formatDistance } from 'date-fns';
 const Admin = () => {
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
@@ -15,17 +15,17 @@ const Admin = () => {
     const [monthfns, setMonthfns] = useState(0);
     const [dateNofns, setDatenofns] = useState(1);
 
-    const result = formatDistance(
-        new Date(),
-        new Date(yearfns, monthfns, dateNofns)
-      )
+    // const result = formatDistance(
+    //     new Date(),
+    //     new Date(yearfns, monthfns, dateNofns)
+    //   )
 
     const data = new FormData();
     data.append("title",title);
     data.append("body",body);
     data.append("genre",genre);
     data.append("readTime",readTime);
-    data.append("date", result);
+    // data.append("date", result);
     data.append("image",image);
 
     const handleSubmit = (e) => {
@@ -66,7 +66,7 @@ const Admin = () => {
     //     new Date(),
     //     new Date(yearfns, monthfns, dateNofns)
     //   )
-      console.log(result);
+    //   console.log(result);
       console.log(new Date(yearfns, monthfns, dateNofns));
     //   new Date(yearfns, monthfns, dateNofns),
     //   {addSuffix: true}

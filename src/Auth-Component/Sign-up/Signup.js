@@ -19,21 +19,28 @@ const Signup = () => {
         setPassword(e.target.value)
     }
     let userInfo = { name, email, password }
+    const data = new FormData();
+    data.append("name",name);
+    data.append("email",email);
+    data.append("password",password);
 
-    const signUp = async () => {
-        let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
+    const signUp = async (e) => {
+        e.preventDefault();
+         fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
-            body: JSON.stringify(userInfo),
             headers: {
-                "Content-Type": 'application/json',
-                "Accept": 'application/json'
-            }
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+            body: new URLSearchParams(userInfo),
+        }).then(function(){
+            history.push("/")
         })
-        result = await result.json();
-        console.log("result", result);
+        // result = await result.json();
+        // console.log("result", result);
         // store result in local storage
         // push hiistory to homepage
-            history.push("/");
+            // history.push("/");
+            demo()
     }
 
     const demo = () => {
@@ -48,7 +55,7 @@ const Signup = () => {
                 <input type="text" value={name} onChange={updateName} placeholder='Name'/>
                 <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
                 <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
-                <button type="submit" onClick={demo}>sign me up!</button>
+                <button type="submit" >sign me up!</button>
             </form>
             <div className="container2">
                 demo
