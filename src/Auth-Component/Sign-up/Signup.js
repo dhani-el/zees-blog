@@ -21,18 +21,23 @@ const Signup = () => {
         setPassword(e.target.value)
     }
     let userInfo = { name, email, password }
+    const data = new FormData();
+    data.append("name",name);
+    data.append("email",email);
+    data.append("password",password);
 
     const signUp = async (e) => {
         let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
-            body: JSON.stringify(userInfo),
             headers: {
-                "Content-Type": 'application/json',
-                "Accept": 'application/json'
-            }
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+            body: new URLSearchParams(userInfo),
+        }).then(function(){
+            history.push("/")
         })
-        result = await result.json();
-        console.log("result", result);
+        // result = await result.json();
+        // console.log("result", result);
         // store result in local storage
         // push hiistory to homepage
             // history.push("/");
