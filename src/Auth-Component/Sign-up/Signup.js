@@ -9,7 +9,8 @@ const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const history = useHistory();
+    const [newsletter, setNewsletter] = useState(false);
+    const history = useHistory();
 
     const updateName = (e) => {
         setName(e.target.value)
@@ -20,11 +21,15 @@ const Signup = () => {
     const updatePassword = (e) => {
         setPassword(e.target.value)
     }
+    const updateNewsletter = () => {
+        setNewsletter(!newsletter)
+    }
     let userInfo = { name, email, password }
     const data = new FormData();
     data.append("name",name);
     data.append("email",email);
     data.append("password",password);
+    data.append("newsLetter",newsletter);
 
     const signUp = async (e) => {
         let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
@@ -34,7 +39,7 @@ const Signup = () => {
               },
             body: new URLSearchParams(userInfo),
         }).then(function(){
-            history.push("/")
+            history.push("/");
         })
         // result = await result.json();
         // console.log("result", result);
@@ -51,6 +56,9 @@ const Signup = () => {
                 <input type="text" value={name} onChange={updateName} placeholder='Name'/>
                 <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
                 <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
+                <label>
+                <input type="checkbox"  onChange={updateNewsletter}/> i want newsLetters
+                </label>
                 <button type="submit" onClick={signUp}>sign me up!</button>
             </div>
             <div className="container2">

@@ -9,7 +9,7 @@ import About from '../About-page/About';
 import Genre from '../Genre/Genre';
 import Circle from './Circle';
 import Share from '../TechnicalComponents/Share';
-import Cursor from '../TechnicalComponents/cursor';
+// import Cursor from '../TechnicalComponents/cursor';
 import Error from '../Error-page/Error';
 import Preloader from '../Preloader/Preloader';
 import Signup from '../Auth-Component/Sign-up/Signup';
@@ -22,7 +22,7 @@ function App() {
 
     <Router>
       <div className="App">
-        <Cursor />
+        {/* <Cursor /> */}
         <div className="content">
           <Switch>
             <Route exact path="/">

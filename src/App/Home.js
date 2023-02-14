@@ -17,7 +17,7 @@ import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
-import 'boxicons';
+// import 'boxicons';
 const Home = () => {
 
     let container = useRef(null);

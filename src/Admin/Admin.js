@@ -25,7 +25,7 @@ const Admin = () => {
     data.append("body",body);
     data.append("genre",genre);
     data.append("readTime",readTime);
-    // data.append("date", result);
+    data.append("date", new Date().toLocaleString());
     data.append("image",image);
 
     const handleSubmit = (e) => {
