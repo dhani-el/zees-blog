@@ -9,7 +9,7 @@ const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const history = useHistory();
+    const history = useHistory();
 
     const updateName = (e) => {
         setName(e.target.value)
@@ -34,13 +34,11 @@ const Signup = () => {
               },
             body: new URLSearchParams(userInfo),
         }).then(function(){
-            history.push("/")
-        })
-        // result = await result.json();
-        // console.log("result", result);
-        // store result in local storage
-        // push hiistory to homepage
-            // history.push("/");
+            history.push("/");
+            result =  result.json();
+            localStorage.setItem("user-info", JSON.stringify(result));
+        });
+        console.log(result);
     }
 
     return ( 
