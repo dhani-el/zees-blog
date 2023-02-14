@@ -39,7 +39,7 @@ const Signup = () => {
               },
             body: new URLSearchParams(userInfo),
         }).then(function(){
-            history.push("/");
+            history.push("/")
         })
         // result = await result.json();
         // console.log("result", result);

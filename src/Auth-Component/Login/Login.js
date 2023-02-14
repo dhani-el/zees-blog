@@ -56,7 +56,7 @@ const Login = () => {
             <div className="marks mark-4"><img src={mark} alt="" /></div>
             <div className="marks mark-5"><img src={mark} alt="" /></div>
         </div>
-     )
+    );
 }
- 
+
 export default Login;

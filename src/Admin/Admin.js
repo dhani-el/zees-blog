@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Admin.css";
 // import { formatDistance } from 'date-fns';
@@ -30,6 +30,7 @@ const Admin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsPending(true);
         fetch('https://zeesblog.onrender.com/admin/post', {
             method: 'POST',
             body: data,
@@ -67,28 +68,28 @@ const Admin = () => {
     //     new Date(yearfns, monthfns, dateNofns)
     //   )
     //   console.log(result);
-      console.log(new Date(yearfns, monthfns, dateNofns));
+    console.log(new Date(yearfns, monthfns, dateNofns));
     //   new Date(yearfns, monthfns, dateNofns),
     //   {addSuffix: true}
 
-    return ( 
+    return (
         <div className="admin-container">
             <div className="h2">Hi Zee, what are we writing?</div>
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="">
                     blog title
                 </label>
-                <input type="text" name="" id="" 
+                <input type="text" name="" id=""
                     required
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <label htmlFor="">genre</label>
-                <input type="text" 
+                <input type="text"
                     required
                     onChange={(e) => setGenre(e.target.value)}
                 />
-                 <label htmlFor="">read time</label>
-                <input type="text" 
+                <label htmlFor="">read time</label>
+                <input type="text"
                     required
                     onChange={(e) => setReadtime(e.target.value)}
                 />
@@ -99,34 +100,34 @@ const Admin = () => {
                 /> */}
                 <div className="dates">
                     <select name="" id="" onChange={(e) => setYearfns(e.target.value)}>
-                      { years.map((year, index) => (
-                          <option key={index}>{year}</option>
-                      )) }  
+                        {years.map((year, index) => (
+                            <option key={index}>{year}</option>
+                        ))}
                     </select>
                     <select name="" id="" onChange={(e) => setMonthfns(e.target.value)}>
-                        { months.map((month, index) => (
+                        {months.map((month, index) => (
                             <option value={index} key={index}> {month} </option>
-                        )) }
+                        ))}
                     </select>
                     <select name="" id="" onChange={(e) => setDatenofns(e.target.value)}>
-                        { dateNos.map((dateNo, index) => (
+                        {dateNos.map((dateNo, index) => (
                             <option key={index}>{dateNo}</option>
-                        )) }
+                        ))}
                     </select>
                 </div>
                 <label htmlFor="">Upload Image</label>
                 <input type="file" name="image" id="image"
                     required
                     onChange={(e) => setImage(e.target.files[0])}
-                 />  
+                />
                 <label htmlFor="">blog body</label>
                 <textarea
                     required
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
-     
-              {!IsPending &&  <button>add blog</button>}
-              {IsPending &&  <button disabled>adding blog</button>}
+
+                {!IsPending && <button>add blog</button>}
+                {IsPending && <button disabled>adding blog</button>}
             </form>
             <p>{title}</p>
             <p>{body}</p>
@@ -137,7 +138,7 @@ const Admin = () => {
             <p>{monthfns}</p>
             <p>{dateNofns}</p>
         </div>
-     );
+    );
 }
- 
+
 export default Admin;

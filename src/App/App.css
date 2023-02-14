@@ -367,7 +367,7 @@
 }
 .newsletter-sub-stn img {
   position: absolute;
-  right: -15%;
+  right: -13%;
   top: 15%;
   filter: brightness(0) saturate(100%) invert(18%) sepia(11%) saturate(3794%) hue-rotate(122deg) brightness(91%) contrast(82%);
 }

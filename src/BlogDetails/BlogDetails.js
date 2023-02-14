@@ -99,3 +99,7 @@ const BlogDetails = () => {
 }
 
 export default BlogDetails;
+
+//comments should be closed by default - query on click 
+// api for all the comments - blog title for specific comments
+// same thing for likes
