@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import '../Blog-page/blog.css';
 import './BlogList.css';
+import {formatDistanceToNowStrict, isDate} from "date-fns"
 
     const Bloglist = ({ blogs }) => {
     return ( 
@@ -9,7 +10,8 @@ import './BlogList.css';
                         <div className="blog-preview" key={blog._id}>
                             {console.log(blog)}
                             <div className="blog-text">
-                                <div className="writer"><div className="author">zee</div><div className="point">.</div> <div className="date">{blog.date}</div></div>
+                                <div className="writer"><div className="author">zee</div><div className="point">.</div> <div className="date">
+                                    {new Date(blog.date).toString()==="Invalid Date"? blog.date : formatDistanceToNowStrict(new Date(blog.date))}                                    </div></div>
                                 <Link to={`/blog/${blog.title}`}>
                                     <div className="blog-title">{blog.title}</div>
                                     <p>{blog.body.slice(0, 200)}...</p>

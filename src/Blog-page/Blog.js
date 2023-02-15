@@ -15,8 +15,6 @@ const Blog = () => {
     const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`, id);
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    // 
-    // useEffect(function(){},[])
 
     const handleSubmit = (e) => {
         setBtnstate(true);

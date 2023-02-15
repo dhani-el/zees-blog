@@ -60,7 +60,7 @@ const Cursor = () => {
             positionRef.current.destinationY += distanceY;
           }
         }
-        secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+        // secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
       };
       followMouse();
     }, []);

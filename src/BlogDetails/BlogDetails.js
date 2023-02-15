@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
+import Like from "../Like-Component/likes"
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -61,6 +62,7 @@ const BlogDetails = () => {
                         </div>
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>
+                        <Like/>
                     </article>}
                     {copied && <div className="copy-alert">Copied to Clipboard!</div>}
                 </div>

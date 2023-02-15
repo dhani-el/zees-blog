@@ -8,7 +8,9 @@ const Usefetch = (url , id) => {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch(url)
+            fetch(url, {
+                credentials:"include"
+            })
             .then(res => {
                 if (!res.ok) {
                     throw Error('Could not fetch resource');
