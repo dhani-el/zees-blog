@@ -9,6 +9,7 @@ import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
+import { formatDistanceToNowStrict, isDate } from "date-fns"
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -49,7 +50,7 @@ const BlogDetails = () => {
                                     <div className="name">susan omono</div>
                                 </div>
                                 <div className="blog-stats">
-                                    <div className="date">{blog[0].date}</div>
+                                    <div className="date">{new Date(blog[0].date).toString() === "Invalid Date" ? blog[0].date : formatDistanceToNowStrict(new Date(blog[0].date))} ago</div>
                                     <span className="dot">.</span>
                                     <div className="read-time">{blog[0].readTime} read</div>
                                 </div>

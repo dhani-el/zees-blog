@@ -30,7 +30,7 @@ const Genre = () => {
             <div className="genre-container-2">
                 {IsPending && <Skeleton />}
                 {error && <div className="err-msg">{error}</div>}
-                {blogs && <Bloglist blogs={blogs.filter((blog) => blog.genre === name)} />}
+                {blogs && <Bloglist blogs={blogs.filter((blog) => blog.genre.toLowerCase() === name.toLowerCase())} />}
                 <Footer />
             </div>
         </div>
