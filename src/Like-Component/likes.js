@@ -5,7 +5,7 @@ import "./likes.css";
 
 const Like = ({ blogTitle }) => {
 
-    const [like, setLike] = useState(true);
+    const [like, setLike] = useState(false);
     const [no_Of_Likes, set_no_of_likes] = useState(0);
 
     const data = new FormData();
