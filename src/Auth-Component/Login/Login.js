@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import quotes from "../../Images/quotes.png";
 import mark from '../../Images/exclamation.png';
 import './Login.css';
@@ -33,6 +33,7 @@ const Login = () => {
             history.push("/");
         })
     }
+    
 
     return ( 
         <div className="login-container">

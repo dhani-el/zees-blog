@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import quotes from "../../Images/quotes.png";
 import './Signup.css';
@@ -47,6 +47,24 @@ const Signup = () => {
         // push hiistory to homepage
             // history.push("/");
     }
+    useEffect(() => {
+      
+        let value = setTimeout(() => {
+            //functions to validate form (checking if it already exists in the database and checking if the structure is valid )
+                fetch('https://zeesblog.onrender.com/user/exists', {
+                    method: 'POST',
+                    body: name,
+                })
+                    .then(() => {
+
+                    })
+        
+        }, 500);
+    
+      return () => {
+        clearTimeout(value);
+      }
+    }, [])
 
     return ( 
         <div className="signup-container">

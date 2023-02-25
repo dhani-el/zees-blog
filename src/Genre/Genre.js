@@ -20,7 +20,7 @@ const Genre = () => {
     let query = useQuery();
     let name = query.get("name");
     // const { genre } = useParams();
-    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/0');
+    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/genres/:genre');
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
@@ -30,7 +30,7 @@ const Genre = () => {
             <div className="genre-container-2">
                 {IsPending && <Skeleton />}
                 {error && <div className="err-msg">{error}</div>}
-                {blogs && <Bloglist blogs={blogs.filter((blog) => blog.genre === name)} />}
+                {blogs && <Bloglist blogs={blogs.filter((blog) => blog.genre.toLowerCase() === name.toLowerCase())} />}
                 <Footer />
             </div>
         </div>
