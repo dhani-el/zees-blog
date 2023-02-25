@@ -14,6 +14,7 @@ const Like = ({ blogTitle }) => {
     function handleLike() {
         fetch("https://zeesblog.onrender.com/likes/post", {
             method: "POST",
+            credentials:"include",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -39,9 +40,9 @@ const Like = ({ blogTitle }) => {
         fetch(`https://zeesblog.onrender.com/likes/${blogTitle}`, {
             method: "GET",
             credentials: "include"
-        }).then((value) => {
-            console.log("value is ", value);
-            // set_no_of_likes(value);
+        }).then((value) => value.json()).then(function(data){
+            console.log(`this blog post has ${data} number of likes`);
+            set_no_of_likes(data);
         });
     }, [like, blogTitle]);
 
