@@ -9,7 +9,8 @@ import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
-
+import CommentForm from "../CommentSection/Comment Form/CommentForm";
+import Comments from "../CommentSection/Comments/Comments";
 const BlogDetails = () => {
     const { id } = useParams();
     // console.log(id);
@@ -25,6 +26,7 @@ const BlogDetails = () => {
             })
     }
     const [copied, setCopied] = useState(false);
+    const [commentPage, setCommentPage] = useState(0);
     const handleCopy = () => {
         setCopied(true);
     }
@@ -62,7 +64,11 @@ const BlogDetails = () => {
                         </div>
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>
-                        <Like/>
+                        <Like blogTitle={blog[0].title}/>
+                        <CommentForm title={blog[0].title}/>
+                        {"comments"}
+                        <Comments title={blog[0].title} pag ={commentPage}/>
+
                     </article>}
                     {copied && <div className="copy-alert">Copied to Clipboard!</div>}
                 </div>

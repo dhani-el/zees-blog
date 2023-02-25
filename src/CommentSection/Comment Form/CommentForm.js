@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 
-const CommentForm = () => {
+const CommentForm = ({title}) => {
 
     const [comment, setComment] = useState()
     const [IsPending, setIsPending] = useState(false);
     const data = new FormData();
+    data.append("title", title);
     data.append("comment", comment);
 
         const handleSubmit = (e) => {
                 e.preventDefault();
-                fetch(url, {
+                fetch("https://zeesblog.onrender.com/comments/post", {
                     method: 'POST',
-                    body: data,
+                    credentials:"include",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      },
+                    body: new URLSearchParams(data),
                 })
                     .then(() => {
                         setIsPending(false);

@@ -1,11 +1,13 @@
 const Comment = ({ comments }) => {
+    console.log("the received comment is ", comments);
     return ( 
         <div className="comment-wrapper">
-            { comments.map((comment) => {
+            { comments.map((comment) => (
                 <div className="comment-stn" key={comment.id}>
-                    {comment}
+                    <h3>{comment.username}</h3>
+                    <p>{comment.body}</p>
                 </div>
-            }) }
+            )) }
         </div>
      );
 }
