@@ -9,6 +9,8 @@ import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
+import CommentForm from "../CommentSection/Comment Form/CommentForm"
+import Comments from "../CommentSection/Comments/Comments"
 import { formatDistanceToNowStrict, isDate } from "date-fns"
 
 const BlogDetails = () => {
