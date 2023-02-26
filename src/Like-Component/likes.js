@@ -27,6 +27,7 @@ const Like = ({ blogTitle }) => {
     function handleUnLike() {
         fetch("https://zeesblog.onrender.com/likes/delete", {
             method: "DELETE",
+            credentials:"include",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -48,7 +49,7 @@ const Like = ({ blogTitle }) => {
 
     return (
         <div className="like-container">
-            <button onClick={like ? handleLike : handleUnLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button> <p>{no_Of_Likes} likes</p>
+            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button> <p>{no_Of_Likes} likes</p>
         </div>
     );
 }
