@@ -44,11 +44,11 @@ const Like = ({ blogTitle }) => {
             console.log(`this blog post has ${data} number of likes`);
             set_no_of_likes(data);
         });
-    }, [like, blogTitle]);
+    }, [like, blogTitle, no_Of_Likes]);
 
     return (
         <div className="like-container">
-            <button onClick={like ? handleLike : handleUnLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button> <p>{no_Of_Likes} likes</p>
+            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button> <p>{no_Of_Likes} likes</p>
         </div>
     );
 }
