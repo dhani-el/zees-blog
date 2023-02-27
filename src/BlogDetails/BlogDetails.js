@@ -9,7 +9,6 @@ import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
-import CommentForm from "../CommentSection/Comment Form/CommentForm"
 import Comments from "../CommentSection/Comments/Comments"
 import { formatDistanceToNowStrict, isDate } from "date-fns"
 
@@ -67,7 +66,6 @@ const BlogDetails = () => {
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>
                         <Like blogTitle={blog[0].title}/>
-                        <CommentForm title={blog[0].title}/>
                         {"comments"}
                         <Comments title={blog[0].title} pag ={commentPage}/>
 

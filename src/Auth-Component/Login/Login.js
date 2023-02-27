@@ -7,7 +7,10 @@ import { useHistory } from "react-router-dom";
 const Login = () => {
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const [data , setData] = useState();
     const history = useHistory();
     function handleUserChange(e){
         setUserName(e.target.value)
@@ -30,10 +33,18 @@ const Login = () => {
               },
              
             body: new URLSearchParams(payLoad),
+
         }).then(function(){
             history.push("/");
             setIsLoggedIn(true);
             // localStorage.setItem("loginStatus", true);
+
+        }).then(function(value){
+           return value.json();
+        }).then(function(newValue){
+            setData(newValue);
+            console.log("this is the login data received",data);
+
         })
     }
 

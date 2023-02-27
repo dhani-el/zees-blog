@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const CommentForm = ({title}) => {
+const CommentForm = ({title , updateFunc}) => {
 
     const [comment, setComment] = useState()
     const [IsPending, setIsPending] = useState(false);
@@ -8,21 +8,23 @@ const CommentForm = ({title}) => {
     data.append("title", title);
     data.append("comment", comment);
 
-
         const handleSubmit = (e) => {
-            e.preventDefault();
-            fetch("https://zeesblog.onrender.com/comments/post", {
-                method: 'POST',
-                credentials:"include",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                  },
-                body: new URLSearchParams(data),
-            })
-                .then(() => {
-                    setIsPending(false);
-                });
-    }
+                e.preventDefault();
+                fetch("https://zeesblog.onrender.com/comments/post", {
+                    method: 'POST',
+                    credentials:"include",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      },
+                    body: new URLSearchParams(data),
+                }).then((value) => value.json())
+                    .then((newVal) => {
+                        updateFunc(newVal);
+                        // setIsPending(false);
+                    }).then(() => {
+                        setIsPending(false);
+                    });
+        }
 
     return (
         <div className="comment-form-container">
