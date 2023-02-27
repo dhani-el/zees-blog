@@ -29,7 +29,7 @@ const Usefetch = (url , id) => {
         return () => abortCont.abort();
     }, [id]);
     
-    return ( {data, IsPending, error} );
+    return ( {data, IsPending, error , setdata} );
 }
  
 export default Usefetch;
