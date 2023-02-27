@@ -41,32 +41,32 @@ const Signup = () => {
         }).then(function(){
             // history.push("/")
         })
-        result = await result.json();
-        console.log("result", result);
+        // result = await result.json();
+        // console.log("result", result);
         // store result in local storage
         // push hiistory to homepage
             // history.push("/");
     }
 
 
-    useEffect(() => {
+    // useEffect(() => {
       
-        let value = setTimeout(() => {
-            //functions to validate form (checking if it already exists in the database and checking if the structure is valid )
-                fetch('https://zeesblog.onrender.com/user/exists', {
-                    method: 'POST',
-                    body: name,
-                })
-                    .then(() => {
+    //     let value = setTimeout(() => {
+    //         //functions to validate form (checking if it already exists in the database and checking if the structure is valid )
+    //             fetch('https://zeesblog.onrender.com/user/exists', {
+    //                 method: 'POST',
+    //                 body: name,
+    //             })
+    //                 .then(() => {
 
-                    })
+    //                 })
         
-        }, 500);
+    //     }, 500);
     
-      return () => {
-        clearTimeout(value);
-      }
-    }, [])
+    //   return () => {
+    //     clearTimeout(value);
+    //   }
+    // }, [])
 
     return ( 
         <div className="signup-container">

@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 const Login = () => {
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const history = useHistory();
     function handleUserChange(e){
         setUserName(e.target.value)
@@ -31,8 +32,12 @@ const Login = () => {
             body: new URLSearchParams(payLoad),
         }).then(function(){
             history.push("/");
+            setIsLoggedIn(true);
+            // localStorage.setItem("loginStatus", true);
         })
     }
+
+    // let loginState = localStorage.getItem("loginStatus");
     
 
     return ( 

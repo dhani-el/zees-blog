@@ -8,21 +8,21 @@ const CommentForm = ({title}) => {
     data.append("title", title);
     data.append("comment", comment);
 
-        const handleSubmit = (e) => {
-                e.preventDefault();
-                fetch("https://zeesblog.onrender.com/comments/post", {
-                    method: 'POST',
-                    credentials:"include",
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                      },
-                    body: new URLSearchParams(data),
-                })
-                    .then(() => {
-                        setIsPending(false);
-                    });
-        }
 
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            fetch("https://zeesblog.onrender.com/comments/post", {
+                method: 'POST',
+                credentials:"include",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  },
+                body: new URLSearchParams(data),
+            })
+                .then(() => {
+                    setIsPending(false);
+                });
+    }
 
     return (
         <div className="comment-form-container">
