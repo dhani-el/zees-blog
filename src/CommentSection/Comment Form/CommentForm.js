@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const CommentForm = ({title}) => {
+const CommentForm = ({title , updateFunc}) => {
 
     const [comment, setComment] = useState()
     const [IsPending, setIsPending] = useState(false);
@@ -17,8 +17,11 @@ const CommentForm = ({title}) => {
                         'Content-Type': 'application/x-www-form-urlencoded'
                       },
                     body: new URLSearchParams(data),
-                })
-                    .then(() => {
+                }).then((value) => value.json())
+                    .then((newVal) => {
+                        updateFunc(newVal);
+                        // setIsPending(false);
+                    }).then(() => {
                         setIsPending(false);
                     });
         }

@@ -27,6 +27,7 @@ const Like = ({ blogTitle }) => {
     function handleUnLike() {
         fetch("https://zeesblog.onrender.com/likes/delete", {
             method: "DELETE",
+            credentials:"include",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
