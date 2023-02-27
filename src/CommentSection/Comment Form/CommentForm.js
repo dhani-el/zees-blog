@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 
 const CommentForm = ({title , updateFunc}) => {
 
@@ -8,8 +8,11 @@ const CommentForm = ({title , updateFunc}) => {
     data.append("title", title);
     data.append("comment", comment);
 
+    const form = useRef()
+
         const handleSubmit = (e) => {
                 e.preventDefault();
+                form.current.reset();
                 fetch("https://zeesblog.onrender.com/comments/post", {
                     method: 'POST',
                     credentials:"include",
@@ -28,7 +31,7 @@ const CommentForm = ({title , updateFunc}) => {
 
     return (
         <div className="comment-form-container">
-            <form action="" onSubmit={handleSubmit}>
+            <form action="" onSubmit={handleSubmit} ref={form}>
                 <input type="text" name="" id="" placeholder="Leave a comment..." onChange={(e) => { setComment(e.target.value) }} />
                 {!IsPending && <button>send</button>}
                 {IsPending && <button disabled>sending</button>}
