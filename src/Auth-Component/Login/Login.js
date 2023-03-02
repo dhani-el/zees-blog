@@ -10,10 +10,10 @@ const Login = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [data , setData] = useState();
     const history = useHistory();
     function handleUserChange(e){
         setUserName(e.target.value)
+        // console.log("username here" ,userName);
     }
 
     function handlePasswordChange(e){
@@ -34,23 +34,21 @@ const Login = () => {
              
             body: new URLSearchParams(payLoad),
 
-        }).then(function(){
-            history.push("/");
-            setIsLoggedIn(true);
-            // localStorage.setItem("loginStatus", true);
-
         }).then(function(value){
            return value.json();
         }).then(function(newValue){
-            setData(newValue);
-            console.log("this is the login data received",data);
-
+            setIsLoggedIn(true);
+            localStorage.setItem("loginStatus", true);
+            localStorage.setItem("username", newValue["0"].name);
+            localStorage.setItem("email", newValue["0"].email);
+        }).then(function(){
+            history.push("/");
         })
     }
 
     // let loginState = localStorage.getItem("loginStatus");
     
-
+// console.log("who is the user here", user);
     return ( 
         <div className="login-container">
             <div className="form">
