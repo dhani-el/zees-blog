@@ -20,7 +20,7 @@ const Genre = () => {
     let query = useQuery();
     let name = query.get("name");
     // const { genre } = useParams();
-    const { data: blogs, IsPending, error } = Usefetch('https://zeesblog.onrender.com/blogs/genres/:genre');
+    const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/genres/${name}/0`);
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);

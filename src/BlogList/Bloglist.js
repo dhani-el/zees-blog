@@ -4,11 +4,17 @@ import './BlogList.css';
 import { formatDistanceToNowStrict, isDate } from "date-fns"
 
 const Bloglist = ({ blogs }) => {
+
+    // const handleCapture = (e) => {
+    //     let genreLink = e.target.textContent;
+    //     return  genreLink;
+    // }
+    // let data = handleCapture();
+    // console.log(data);
     return (
         <div className="bloglist">
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog._id}>
-                    {console.log(blog)}
                     <div className="blog-text">
                         <div className="writer"><div className="author">zee</div><div className="point">.</div> <div className="date">
                             {new Date(blog.date).toString() === "Invalid Date" ? blog.date : formatDistanceToNowStrict(new Date(blog.date))} ago</div></div>
