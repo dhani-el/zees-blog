@@ -14,9 +14,7 @@ import { formatDistanceToNowStrict, isDate } from "date-fns"
 
 const BlogDetails = () => {
     const { id } = useParams();
-    // console.log(id);
     const { data: blog, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/post/${id}`);
-    console.log(blog);
     const history = useHistory();
     const handleDelete = () => {
         fetch(`https://zeesblog.onrender.com/admin/delete/${id}`, {
@@ -31,7 +29,6 @@ const BlogDetails = () => {
     const handleCopy = () => {
         setCopied(true);
     }
-    console.log(copied);
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
@@ -65,10 +62,10 @@ const BlogDetails = () => {
                         </div>
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>
-                        <Like blogTitle={blog[0].title}/>
-                        {"comments"}
-                        <Comments title={blog[0].title} pag ={commentPage}/>
-
+                        <Like blogTitle={blog[0].title} />
+                        <div className="comments-wall">
+                            <Comments title={blog[0].title} pag={commentPage} />
+                        </div>
                     </article>}
                     {copied && <div className="copy-alert">Copied to Clipboard!</div>}
                 </div>

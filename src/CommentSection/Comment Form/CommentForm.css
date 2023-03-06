@@ -1,0 +1,27 @@
+.comment-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.comment-form-container form {
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+.comment-form-container button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.comment-form-container input{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 2px 14px -1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 3px 2px 14px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 3px 2px 14px -1px rgba(0,0,0,0.3);
+    outline: none;
+    border: none;
+    height: 10vh;
+}

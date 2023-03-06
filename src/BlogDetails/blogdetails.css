@@ -266,3 +266,12 @@ h2 {
   .blog-details-container .sticky-footer-container .nav ul li a:focus {
       text-decoration: underline;
   }
+  .blog-details-container .comments-wall{
+      position: absolute;
+      background-color: white;
+      top: 0;
+      right: 0;
+      z-index: 9;
+      width: 30%;
+      padding-top: 2%;
+  }

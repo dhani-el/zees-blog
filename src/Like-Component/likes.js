@@ -42,7 +42,6 @@ const Like = ({ blogTitle }) => {
             method: "GET",
             credentials: "include"
         }).then((value) => value.json()).then(function(data){
-            console.log(`this blog post has ${data} number of likes`);
             set_no_of_likes(data);
         });
     }, [like, blogTitle, no_Of_Likes]);

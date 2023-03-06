@@ -37,18 +37,16 @@ const Login = () => {
         }).then(function(value){
            return value.json();
         }).then(function(newValue){
-            setIsLoggedIn(true);
             localStorage.setItem("loginStatus", true);
             localStorage.setItem("username", newValue["0"].name);
             localStorage.setItem("email", newValue["0"].email);
         }).then(function(){
             history.push("/");
+            setIsLoggedIn(true);
+            console.log(isLoggedIn);
         })
     }
 
-    // let loginState = localStorage.getItem("loginStatus");
-    
-// console.log("who is the user here", user);
     return ( 
         <div className="login-container">
             <div className="form">

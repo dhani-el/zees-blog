@@ -1,5 +1,4 @@
 const Comment = ({ comments }) => {
-    console.log("the received comment is ", comments);
     return ( 
         <div className="comment-wrapper">
             { comments.map((comment) => (
@@ -11,5 +10,6 @@ const Comment = ({ comments }) => {
         </div>
      );
 }
+//make id key value pair
  
 export default Comment;

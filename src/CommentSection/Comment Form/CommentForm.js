@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import './CommentForm.css';
 
 const CommentForm = ({title , updateFunc}) => {
 
@@ -13,6 +14,7 @@ const CommentForm = ({title , updateFunc}) => {
         const handleSubmit = (e) => {
                 e.preventDefault();
                 form.current.reset();
+                setIsPending(true);
                 fetch("https://zeesblog.onrender.com/comments/post", {
                     method: 'POST',
                     credentials:"include",
