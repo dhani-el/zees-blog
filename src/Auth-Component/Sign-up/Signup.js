@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 import { useHistory } from "react-router-dom";
 import quotes from "../../Images/quotes.png";
 import './Signup.css';
@@ -12,17 +12,16 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [newsletter, setNewsletter] = useState(false);
     const history = useHistory();
+    const timeoutRef = useRef()
 
     const handleNameChange = (e) => {
         setName(e.target.value);
-        console.log("validation starting soon");
-        setTimeout(() => {
+        console.log("validation starting soon")
             isValidName(e.target.value);
-        }, 500);
-        
     }
      function isValidName(username){
-        console.log("validating username " , username);
+      timeoutRef.current =  setTimeout(function(){
+            console.log("validating username " , username);
         let ata = new FormData();
         ata.append('username',username);
         fetch('https://zeesblog.onrender.com/user/exists', {
@@ -32,11 +31,15 @@ const Signup = () => {
                         'Content-Type': 'application/x-www-form-urlencoded'
                       },
                     body: new URLSearchParams(ata),
-                }).then(function(response){ return response.json()})
+                }).then(function(response){ 
+                    return response.json()})
                   .then(function(res){
                     console.log(res);
                     setvalidName(res);
+                    clearTimeout(timeoutRef.current);
                 });
+        },500);
+        
     }
     const updateEmail = (e) => {
         setEmail(e.target.value)
