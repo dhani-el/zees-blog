@@ -1,8 +1,20 @@
+.like-container {
+    display: flex;
+    align-items: center;
+    width: min-content;
+    height: 1.6rem;
+    padding: 0;
+}
 .like-container button {
     background: none;
     border: none;
-    width: 3rem;
-    height: 3rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0;
+}
+.like-container p {
+    font-size: 1em;
+    padding: 0;
 }
 .like-container button img {
     max-width: 100%;

@@ -1,3 +1,5 @@
+import './Comment.css';
+
 const Comment = ({ comments }) => {
     return ( 
         <div className="comment-wrapper">

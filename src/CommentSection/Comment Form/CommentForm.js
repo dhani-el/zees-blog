@@ -34,9 +34,9 @@ const CommentForm = ({title , updateFunc}) => {
     return (
         <div className="comment-form-container">
             <form action="" onSubmit={handleSubmit} ref={form}>
-                <input type="text" name="" id="" placeholder="Leave a comment..." onChange={(e) => { setComment(e.target.value) }} />
+                <textarea type="text" name="" id="" placeholder="Leave a comment..." onChange={(e) => { setComment(e.target.value) }}></textarea>
                 {!IsPending && <button>send</button>}
-                {IsPending && <button disabled>sending</button>}
+                {IsPending && <button disabled id="disabled">sending</button>}
             </form>
         </div>
     );

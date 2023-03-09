@@ -1,5 +1,7 @@
 .comments-wrapper{
     padding: 0;
+    height: 100vh;
+    overflow: auto;
 }
 .comments-wrapper .header {
     font-size: 1.6vw;

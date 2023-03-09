@@ -5,6 +5,7 @@ import Skeleton from '../../Skeleton-Screens/Skeleton';
 import CommentForm from "../Comment Form/CommentForm";
 import './Comments.css';
 
+
 const Comments = ({title , pag}) => {
     const { data: comment, IsPending, error ,setdata } = Usefetch(`https://zeesblog.onrender.com/comments/${title}/${pag}`);
 
