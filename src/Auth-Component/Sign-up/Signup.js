@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 import { useHistory } from "react-router-dom";
 import quotes from "../../Images/quotes.png";
 import './Signup.css';
@@ -7,13 +7,39 @@ import mark from '../../Images/exclamation.png';
 const Signup = () => {
 
     const [name, setName] = useState('');
+    const [validName, setvalidName] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [newsletter, setNewsletter] = useState(false);
     const history = useHistory();
+    const timeoutRef = useRef()
 
-    const updateName = (e) => {
-        setName(e.target.value)
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        console.log("validation starting soon")
+            isValidName(e.target.value);
+    }
+     function isValidName(username){
+      timeoutRef.current =  setTimeout(function(){
+            console.log("validating username " , username);
+        let ata = new FormData();
+        ata.append('username',username);
+        fetch('https://zeesblog.onrender.com/user/exists', {
+                    method: 'POST',
+                    credentials:"include",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      },
+                    body: new URLSearchParams(ata),
+                }).then(function(response){ 
+                    return response.json()})
+                  .then(function(res){
+                    console.log(res);
+                    setvalidName(res);
+                    clearTimeout(timeoutRef.current);
+                });
+        },500);
+        
     }
     const updateEmail = (e) => {
         setEmail(e.target.value)
@@ -49,36 +75,12 @@ const Signup = () => {
     }
 
 
-    useEffect(() => {
-      
-        let value = setTimeout(() => {
-            //functions to validate form (checking if it already exists in the database and checking if the structure is valid )
-                fetch('https://zeesblog.onrender.com/user/exists', {
-                    method: 'POST',
-                    credentials:"include",
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                      },
-                     
-                    body: new URLSearchParams(name),
-                })
-                    .then((res) => {
-                        console.log(res.json());
-                    })
-        
-        }, 500);
-    
-      return () => {
-        clearTimeout(value);
-      }
-    }, [name]);
-
     return ( 
         <div className="signup-container">
             <div className="form">
                 <h2>Sign Up for ZEE</h2>
                 <p>Become a part of our subscribers.</p>
-                <input type="text" value={name} onChange={updateName} placeholder='Name'/>
+                <input type="text" value={name} onChange={handleNameChange} placeholder='Name'/>
                 <input type="email" value={email} onChange={updateEmail} placeholder='Email'/>
                 <input type="password" value={password} onChange={updatePassword} placeholder='Password'/>
                 <label>
