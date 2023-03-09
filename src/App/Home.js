@@ -17,7 +17,7 @@ import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
-// import 'boxicons';
+import 'boxicons';
 const Home = () => {
 
     let container = useRef(null);
@@ -30,7 +30,7 @@ const Home = () => {
         tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,
             1,
-            { height: "0%", ease: Power2.easeInOut, delay: 6 }
+            { height: "0%", ease: Power2.easeInOut, delay: 7.5 }
         ).to(image, 2, { scale: 1, ease: Power2.easeInOut, delay: -1.6 });
         const split = new SplitText("#split-text", {
             type: "lines",
@@ -46,7 +46,7 @@ const Home = () => {
             opacity: 1,
             stagger: 0.1,
             ease: "power2",
-            delay: 6.5
+            delay: 8
         });
         const split2 = new SplitText("#split-text2", {
             type: "lines",
@@ -62,7 +62,7 @@ const Home = () => {
             opacity: 1,
             stagger: 0.1,
             ease: "power2",
-            delay: 6.6
+            delay: 8.1
         });
         window.scrollTo(0, 0);
     }, [])

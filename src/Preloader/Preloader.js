@@ -13,14 +13,14 @@ const Preloader = () => {
             duration: 0.5,
             y: "-100%",
             ease: 'power2', 
-            delay: 5
+            delay: 6
          });
 
          gsap.to(headerRef.current, { 
             duration: 0.8,
             autoAlpha: 0,
             ease: 'expo', 
-            delay: 6.5
+            delay: 8
          });
       }, []);
     return ( 

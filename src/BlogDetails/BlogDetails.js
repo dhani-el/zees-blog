@@ -49,7 +49,7 @@ const BlogDetails = () => {
             }, {
                 x: "0%",
                 duration: 0.5,
-                ease:'power2'
+                ease:'power3.inOut'
             })
 
     }, [blog]);
@@ -84,7 +84,8 @@ const BlogDetails = () => {
                         </div>
                         <h2>{blog[0].title}</h2>
                         <div className="header-image-wrapper">
-                            <div className="header-image" style={{ backgroundImage: `url(${blog[0].image})` }}></div>
+                            {/* <div className="header-image" style={{ backgroundImage: `url(${blog[0].image})` }}></div> */}
+                            <img src={blog[0].image} alt="" className="header-image"/>
                         </div>
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>

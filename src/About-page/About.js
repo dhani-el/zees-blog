@@ -77,14 +77,12 @@ const About = () => {
                 </div>
                 <article className="article">
                     <p>
-                        This blog deals mostly with sexual stories, poems and images. Even though we might be posting other categories and all, erotica is still the strongest suit of this blog.
+                    Whether they are discovering themself, finding their feet in a new career, navigating relationships, keeping up with academics, or exploring that new and thrilling hobby, they need support, even if it is just a little.                     </p>
+                    <p>
+                    Zee is for them. Zee is for every twenty-something, by a twenty-something. 
                     </p>
                     <p>
-                        Writing is a powerful tool and a way to express our feelings so occasionally, we would showcase other writers and their works.. We believe in giving writers an audience and a reason to always write.
-                    </p>
-                    <p>
-                        Please feel free to look around but while at it follow and drop comments. Every comment is appreciated but please do so constructively. We’re still growing and would love your feedback and reviews.
-                    </p>
+                    Zee provides guidance and inspiration to twenty-something-year-olds steering through life with intricately delivered how-to guides, inspiring features, and relatable firsthand accounts. Zee is rooting for every young person to have a well-balanced and fulfilling life and wants them always to remember that we are their biggest and loudest cheerleaders.                    </p>
                 </article>
             </div>
             <div className="newsletter-stn">

@@ -23,7 +23,7 @@
     pointer-events: none;
     overflow: hidden;
     animation: type 10s steps(150) infinite;
-    animation-delay: 1500ms;
+    animation-delay: 2500ms;
     white-space: nowrap;
 }
 .preloader-container p::before {

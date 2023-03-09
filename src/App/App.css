@@ -467,3 +467,11 @@ footer article:nth-child(2) p {
   text-transform: capitalize;
   font-weight: 300;
 }
+#facebook-joke {
+  text-decoration: underline;
+  font-size: .8em;
+  text-align: center;
+  font-weight: 400;
+  color: rgba(58, 58, 58, 0.7);
+  margin-top: 4vh;
+}
