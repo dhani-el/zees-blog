@@ -220,6 +220,23 @@
   margin-bottom: .2vw;
   border-radius: 50%;
 }
+
+/* media queries for tabs and mobile phones*/
+@media screen and (max-width: 950px) {
+  .hero-stn-texts h1 {
+    font-size: 4vw;
+    font-weight: 340;
+  }
+  .hero-stn-img-wrapper {
+    max-width: 50vw;
+    height: 29vw;
+  }  
+}
+@media screen and (max-width: 750px) {
+  
+}
+
+
 .reviews-stn {
   padding: 6rem 4vw 10rem;
   position: relative;

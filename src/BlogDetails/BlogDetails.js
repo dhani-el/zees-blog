@@ -54,7 +54,6 @@ const BlogDetails = () => {
 
     }, [blog]);
     useEffect(() => {
-        closed ? console.log('played') : console.log('reversed');
         closed ? tl.current.play() : tl.current.reverse();
     }, [closed]);
 

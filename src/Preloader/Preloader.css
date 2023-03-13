@@ -85,10 +85,11 @@
 .preloader-container .name span {
     text-transform: uppercase;
     opacity: 0;
-    animation: by 0.8s ease-in-out 3500ms;
+    animation: by 0.8s ease-in-out 6000ms;
     animation-fill-mode: forwards;
     position: absolute;
-    bottom: 9rem;
+    bottom: 22vh;
+    font-size: 1.5vw;
 }
 @keyframes by {
     0% {
@@ -96,5 +97,111 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* media queries for tabs and mobile phones -780px*/
+@keyframes type2 {
+    0% {
+        width: 0.125%;
+        opacity: 1;
+        max-width: fit-content;
+    }
+    100% {
+        /* width: 82%; */
+        width: 100%;
+        opacity: 1;
+        max-width: fit-content;
+    }
+}
+@keyframes cursor-overlay {
+    0% {
+        z-index: -1;
+    }
+    100% {
+        z-index: 9;
+    }
+}
+@media screen and (max-width: 780px) {
+    .preloader-container p {
+        animation: none;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        font-size: 3vw;
+        left: 30%;
+        top: 50%;
+        transform: translate(-30%, -100%);
+    }
+    .preloader-container p::before {
+        animation: none;
+        opacity: 0;
+    }
+    .preloader-container p span {
+        position: relative;
+        margin-bottom: 2vh;
+        width: fit-content;
+        opacity: 0;
+        overflow: hidden;
+    }
+    .preloader-container p span::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: .2vw;
+        opacity: 1;
+        background-color: #131515;
+        height: 100%;
+        z-index: -1;
+    }
+    .preloader-container p span:nth-child(1)::after {
+        animation: cursor-overlay 100ms 2900ms forwards;
+    }
+    .preloader-container p span:nth-child(2)::after {
+        animation: cursor-overlay 100ms 3900ms forwards; 
+    }
+    .preloader-container p span:nth-child(1) {
+        animation: type2 2000ms steps(250) forwards;
+        animation-delay: 2000ms;
+    }
+    .preloader-container p span:nth-child(2) {
+        animation: type2 1500ms steps(200) 3000ms forwards;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+    .preloader-container p span:nth-child(3) {
+        animation: type2 2000ms steps(200) 4000ms forwards;
+    }
+    .preloader-container p span::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: .2vw;
+        opacity: 0;
+        background-color: white;
+        height: 100%;
+        animation: blink 0.8s steps(3) infinite;
+    }
+    .preloader-container .name .preload-nam {
+        font-size: 6vw;
+    }
+    .preloader-container .name span {
+        font-size: 2vw;
+    }
+}
+
+/* media queries for  small devices */
+
+@media screen and (max-width: 400px) {
+    .preloader-container p {
+        font-size: 4vw;
+    }
+    .preloader-container .name .preload-nam {
+        font-size: 7.5vw;
+    }
+    .preloader-container .name span {
+        font-size: 3.5vw;
     }
 }
