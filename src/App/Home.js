@@ -17,7 +17,7 @@ import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
-import 'boxicons';
+import Reviews from "../Reviews/Reviews-wrapper/Reviews";
 const Home = () => {
 
     let container = useRef(null);
@@ -80,7 +80,7 @@ const Home = () => {
             </div>
             <div className="hero-stn">
                 <div className="hero-stn-texts">
-                    <h1 id="split-text">Confused about living as a twenty<span id="raleway">-something</span>? You're not alone!</h1>
+                    <h1 id="split-text">Confused about living as a twenty <span id="raleway">-something?</span> You're not alone!</h1>
                     <p id="split-text2">Get in touch with Zee’s lifestyle rants for the imperfect twenty-somethings!</p>
                     <Link to="/blogs/0">explore</Link>
                 </div>
@@ -315,8 +315,9 @@ const Home = () => {
                 </div>
             </div>
             <div className="newsletter-stn">
+                <img className="m" src={m} alt="" />
+                <img src={m2} alt="" className="m2" />
                 <div className="graphics">
-                    <img className="m" src={m} alt="" />
                     <div className="img-tile1">
                         <img className="newsletter-img-wrappers" src={newsletter2} alt="" />
                         <div className="graphics-texts">
@@ -359,7 +360,6 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="newsletter-sub-stn">
-                    <img src={m2} alt="" />
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit}>
@@ -368,7 +368,7 @@ const Home = () => {
                     </form>
                 </div>
             </div>
-            <div className="reviews-stn">
+            {/* <div className="reviews-stn">
                 <div className="review-cards">
                     <div className="review-card">
                         <p><box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
@@ -408,6 +408,9 @@ const Home = () => {
                     </div>
                     <div className="circle"></div>
                 </div>
+            </div> */}
+            <div className="reviews-stn">
+                <Reviews />
             </div>
             <Footer />
         </div>
