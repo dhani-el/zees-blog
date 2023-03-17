@@ -1,7 +1,6 @@
 import './Comment.css';
 
 const Comment = ({ comments }) => {
-    console.log(comments);
     return (
         <div className="comment-wrapper">
             <p>({comments.length}) comments</p>

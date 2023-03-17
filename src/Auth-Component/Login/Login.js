@@ -51,7 +51,9 @@ const Login = () => {
         <div className="login-container">
             <div className="form">
                 <h2>Welcome back to ZEE</h2>
+                <p>Username</p>
                 <input type="name" placeholder='UserName' onChange={handleUserChange}/>
+                <p>Password</p>
                 <input type="password" placeholder='Password' onChange={handlePasswordChange}/>
                 <button type="submit" onClick={login}>log in</button>
             </div>
