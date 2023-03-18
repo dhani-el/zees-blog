@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import './CommentForm.css';
 
 const CommentForm = ({title , updateFunc}) => {
@@ -10,7 +10,6 @@ const CommentForm = ({title , updateFunc}) => {
     data.append("comment", comment);
 
     const form = useRef()
-
         const handleSubmit = (e) => {
                 e.preventDefault();
                 form.current.reset();
@@ -30,6 +29,10 @@ const CommentForm = ({title , updateFunc}) => {
                         setIsPending(false);
                     });
         }
+
+        useEffect(function(){
+            console.log("re render was here");
+        })
 
     return (
         <div className="comment-form-container">
