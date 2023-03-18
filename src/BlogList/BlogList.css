@@ -1,3 +1,7 @@
+.bloglist {
+    width: 70vw;
+}
+
 .blog-preview-img-wraper {
     width: 10vw;
     height: 10vw;
@@ -10,4 +14,22 @@
 }
 .blog-stats a .genre {
     width: fit-content;
+}
+
+/* media queries for tabs and smaller devices */
+
+@media screen and (max-width: 750px) {
+    .blog-preview-img-wraper {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+@media screen and (max-width: 550px) {
+    .blog-preview-img-wraper {
+        width: 20vw;
+        height: 20vw;
+    }
+    .bloglist {
+        width: 80vw;
+    }
 }

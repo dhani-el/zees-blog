@@ -24,12 +24,12 @@ const About = () => {
 
     const tl = new TimelineLite();
 
-    useEffect(()=> {
-        tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" }}).to(
+    useEffect(() => {
+        tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,
             1,
             { height: "0%", ease: Power2.easeInOut }
-        ).to(image, 2, {scale: 1, ease: Power2.easeInOut, delay: -1.6});
+        ).to(image, 2, { scale: 1, ease: Power2.easeInOut, delay: -1.6 });
         const split = new SplitText("#split-text", {
             type: "lines",
             linesClass: "lineChildren"
@@ -46,8 +46,8 @@ const About = () => {
             ease: "power2",
             delay: .5
         });
-        window.scrollTo(0,0);
-    }, [])  
+        window.scrollTo(0, 0);
+    }, [])
     const [btnState, setBtnstate] = useState(false);
 
     const handleSubmit = (e) => {
@@ -55,7 +55,7 @@ const About = () => {
         e.preventDefault();
     }
     let toggleClassCheck = btnState ? 'sub-active' : null;
-    return ( 
+    return (
         <div className="about-wrapper">
             <div className={`sub-msg-alert ${toggleClassCheck}`}>
                 fuck you
@@ -67,29 +67,28 @@ const About = () => {
                     </div>
                     <article>
                         <h2 id="split-text">about zee</h2>
-                        <p id="split-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quibusdam voluptate quae, excepturi voluptatem animi!</p>
+                        <p id="split-text" className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quibusdam voluptate quae, excepturi voluptatem animi!</p>
                         <ul>
-                            <li id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, possimus.</li>
-                            <li id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quasi.</li>
-                            <li id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatibus?</li>
+                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, possimus.</li>
+                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quasi.</li>
+                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatibus?</li>
                         </ul>
                     </article>
                 </div>
                 <article className="article">
                     <p>
-                        This blog deals mostly with sexual stories, poems and images. Even though we might be posting other categories and all, erotica is still the strongest suit of this blog.
+                        Whether they are discovering themself, finding their feet in a new career, navigating relationships, keeping up with academics, or exploring that new and thrilling hobby, they need support, even if it is just a little.                     </p>
+                    <p>
+                        Zee is for them. Zee is for every twenty-something, by a twenty-something.
                     </p>
                     <p>
-                        Writing is a powerful tool and a way to express our feelings so occasionally, we would showcase other writers and their works.. We believe in giving writers an audience and a reason to always write.
-                    </p>
-                    <p>
-                        Please feel free to look around but while at it follow and drop comments. Every comment is appreciated but please do so constructively. We’re still growing and would love your feedback and reviews.
-                    </p>
+                        Zee provides guidance and inspiration to twenty-something-year-olds steering through life with intricately delivered how-to guides, inspiring features, and relatable firsthand accounts. Zee is rooting for every young person to have a well-balanced and fulfilling life and wants them always to remember that we are their biggest and loudest cheerleaders.                    </p>
                 </article>
             </div>
             <div className="newsletter-stn">
+                <img className="m" src={m} alt="" />
+                <img src={m2} alt="" className="m2"/>
                 <div className="graphics">
-                    <img className="m" src={m} alt="" />
                     <div className="img-tile1">
                         <img className="newsletter-img-wrappers" src={newsletter2} alt="" />
                         <div className="graphics-texts">
@@ -111,7 +110,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="img-tile2">
-                    <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
@@ -132,18 +131,17 @@ const About = () => {
                     </div>
                 </div>
                 <div className="newsletter-sub-stn">
-                    <img src={m2} alt="" />
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit}>
-                        <input type="email" name="" id="" placeholder="Email"/>
+                        <input type="email" name="" id="" placeholder="Email" />
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
-     );
+    );
 }
- 
+
 export default About;

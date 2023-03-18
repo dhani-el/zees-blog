@@ -11,22 +11,24 @@ const Preloader = () => {
     useEffect(() => {      
         gsap.to(el.current, { 
             duration: 0.5,
-            y: "-100%",
+            y: "-10vh",
             ease: 'power2', 
-            delay: 5
+            delay: 6
          });
 
          gsap.to(headerRef.current, { 
             duration: 0.8,
             autoAlpha: 0,
             ease: 'expo', 
-            delay: 6.5
+            delay: 8
          });
       }, []);
     return ( 
         <div className="preloader-container" ref={headerRef} data-scroll-section>
             <p>
-                The ideal lifestyle blog for the imperfect 20 something’s. 
+                <span>The ideal </span>
+                <span>lifestyle blog </span>
+                <span>for the imperfect 20 something’s.</span>
             </p>
             <div className="name">
                 <div className="name2">

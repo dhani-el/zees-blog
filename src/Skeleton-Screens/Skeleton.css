@@ -73,3 +73,10 @@
     height: 8rem;
     background-color: #ddd;
 }
+
+/* media queries for tabs and smaller screens */
+@media screen and (max-width: 700px) {
+    .skeleton-container article {
+        width: 80vw;
+    }   
+}

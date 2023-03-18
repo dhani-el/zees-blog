@@ -48,7 +48,8 @@ const Like = ({ blogTitle }) => {
 
     return (
         <div className="like-container">
-            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button> <p>{no_Of_Likes} likes</p>
+            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button>
+             <p>{no_Of_Likes}</p>
         </div>
     );
 }

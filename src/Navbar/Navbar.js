@@ -1,20 +1,59 @@
 import { Link } from "react-router-dom";
 import './Navbar.css';
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import menuBtn from "../Images/hamburger.svg";
+import closeButton from "../Images/close.svg";
 
 const NavBar = () => {
+    const nav = useRef();
+    const tl = useRef();
     const username = localStorage.getItem("username");
     const loginStatus = localStorage.getItem("loginStatus");
-    return ( 
+    const [closed, setClosed] = useState(false);
+    const handleOpen = () => {
+        setClosed(!closed);
+    }
+    useEffect(() => {
+        tl.current = gsap.timeline({
+            paused: true
+        })
+        tl.current.fromTo(nav.current, {
+            x: "100%",
+            duration: 0
+        }, {
+            x: "0%",
+            duration: 0.5,
+            ease: 'power3.inOut'
+        })
+
+    }, []);
+    useEffect(() => {
+        closed ? tl.current.play() : tl.current.reverse();
+    }, [closed]);
+    return (
         <div className="navbar">
             <div className="logo-wrapper">ZEE</div>
+            <ul id="mobile-nav" ref={nav}>
+                <li onClick={handleOpen}><Link to="/">home</Link></li>
+                <li onClick={handleOpen}><Link to="/blogs/0">blog</Link></li>
+                <li onClick={handleOpen}><Link to="/about">about</Link></li>
+                {loginStatus ? <li>Hi {username}</li> : <li onClick={handleOpen}><Link to="/signup" id="signup"><button> sign up</button></Link></li>}
+                <div className="closeBtn-wrapper" onClick={handleOpen}>
+                    <img src={closeButton} alt="" />
+                </div>
+            </ul>
             <ul>
                 <li><Link to="/">home</Link></li>
                 <li><Link to="/blogs/0">blog</Link></li>
                 <li><Link to="/about">about</Link></li>
-                { loginStatus ? <li>Hi {username}</li> : <li><Link to="/signup" id="signup"><button> sign up</button></Link></li> }
+                {loginStatus ? <li>Hi {username}</li> : <li><Link to="/signup" id="signup"><button> sign up</button></Link></li>}
             </ul>
+            <div className="menu-btn-wrapper" onClick={handleOpen}>
+                <img src={menuBtn} alt="" />
+            </div>
         </div>
-     );
+    );
 }
- 
+
 export default NavBar;

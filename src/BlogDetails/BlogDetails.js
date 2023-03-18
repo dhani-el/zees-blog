@@ -4,15 +4,20 @@ import { useHistory, Link } from "react-router-dom";
 import zeehead from "../Images/zeehead.png";
 import './blogdetails.css';
 import Share from "../TechnicalComponents/Share";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBar from "../Navbar/Navbar";
 import insta from "../Images/instalogo.png";
 import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
 import Comments from "../CommentSection/Comments/Comments"
+import commentsBtn from "../Images/comments.svg";
 import { formatDistanceToNowStrict, isDate } from "date-fns"
+import { gsap } from "gsap";
+import closeButton from "../Images/close.svg";
 
 const BlogDetails = () => {
+    const cBlock = useRef();
+    const tl = useRef();
     const { id } = useParams();
     const { data: blog, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/post/${id}`);
     const history = useHistory();
@@ -29,9 +34,29 @@ const BlogDetails = () => {
     const handleCopy = () => {
         setCopied(true);
     }
+    const [closed, setClosed] = useState(false);
+    const handleOpen = () => {
+        setClosed(!closed);
+    }
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, []);
+        window.scrollTo(0, 0);
+        tl.current = gsap.timeline({
+            paused: true
+        })
+            tl.current.fromTo(cBlock.current, {
+                x: "100%",
+                duration: 0
+            }, {
+                x: "0%",
+                duration: 0.5,
+                ease:'power3.inOut'
+            })
+
+    }, [blog]);
+    useEffect(() => {
+        closed ? tl.current.play() : tl.current.reverse();
+    }, [closed]);
+
     return (
         <div className="blog-details-container">
             <NavBar />
@@ -58,13 +83,18 @@ const BlogDetails = () => {
                         </div>
                         <h2>{blog[0].title}</h2>
                         <div className="header-image-wrapper">
-                            <div className="header-image" style={{ backgroundImage: `url(${blog[0].image})` }}></div>
+                            {/* <div className="header-image" style={{ backgroundImage: `url(${blog[0].image})` }}></div> */}
+                            <img src={blog[0].image} alt="" className="header-image"/>
                         </div>
                         <p>{blog[0].body}</p>
                         <button onClick={handleDelete}>delete blog</button>
-                        <Like blogTitle={blog[0].title} />
-                        <div className="comments-wall">
-                            <Comments title={blog[0].title} pag={commentPage} />
+                        <div className="like-comment-hover">
+                            <Like blogTitle={blog[0].title} />
+                            <div className="comments-btn-wrapper" onClick={handleOpen}><img src={commentsBtn} alt="" /></div>
+                        </div>
+                        <div ref={cBlock} className={closed ? 'comments-wall played' : 'comments-wall reversed'}>
+                            <Comments title={blog[0].title} pag={commentPage}/>
+                            <div className="close-button-wrapper" onClick={handleOpen}><img src={closeButton} alt="" /></div>
                         </div>
                     </article>}
                     {copied && <div className="copy-alert">Copied to Clipboard!</div>}

@@ -16,28 +16,8 @@ const Footer = () => {
                         <img src={tweet} alt="" />
                     </a>
                 </div>
+                <p id="facebook-joke">If you still use facebook we want better for you.</p>
             </article>
-            {/* <article>
-                <div className="footer-stn">
-                    <h2>features</h2>
-                    <p>sexcapades</p>
-                    <p>Poems</p>
-                    <p>series</p>
-                    <p>true life</p>
-                </div>
-                <div className="footer-stn">
-                    <h2>resources</h2>
-                    <p>FAQs</p>
-                    <p>Privacy</p>
-                    <p>Terms and Conditions</p>
-                </div>
-                <div className="footer-stn">
-                    <h2>me</h2>
-                    <p>about</p>
-                    <p>features</p>
-                    <p>contacts</p>
-                </div>
-            </article> */}
         </footer>
      );
 }
