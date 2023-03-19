@@ -12,7 +12,7 @@ import Skeleton from '../Skeleton-Screens/Skeleton';
 const Blog = () => {
     let { id } = useParams();
     const history = useHistory()
-    const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`, id);
+    let { data: blogs, IsPending, error, setdata } = Usefetch(`https://zeesblog.onrender.com/blogs/${id}`, id);
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -20,8 +20,23 @@ const Blog = () => {
         setBtnstate(true);
         e.preventDefault();
     }
-    const handleChange = (e) => {
+    const handleSearch = async (e) => {
         setSearchTerm(e.target.value);
+         searchQuery(e.target.value)
+        .then(function(dat){
+            return dat.json()
+        }).then(function(result){
+            setdata(result)
+        }).catch(function(error){
+            console.log("error",error.name);
+        })
+    }
+    
+    async function searchQuery(searchterm){
+       let result = await fetch(`https://zeesblog.onrender.com/blogs/search/${searchterm}`,{
+            credentials:"include"
+        });
+        return result
     }
     let toggleClassCheck = btnState ? 'sub-active' : null;
     function next(){
@@ -45,7 +60,7 @@ const Blog = () => {
                 <Footer />
             </div>
             <div className="search-bar">
-                <input onChange={handleChange} placeholder="Search" type="search" />
+                <input onChange={handleSearch} placeholder="Search" type="search" />
                 <button>
                     <img src={searchBtn} alt="" />
                 </button>
@@ -53,13 +68,7 @@ const Blog = () => {
             {IsPending && <Skeleton/> }
             {error && <div className="err-msg">{error}</div>}
             {blogs && <Bloglist
-                blogs={blogs.filter((blog) => {
-                    if (searchTerm === '') {
-                        return blog
-                    } else if (blog.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        return blog
-                    }
-                })}
+                blogs={blogs}
             />}
             <Pagination currentPage={id} next = {next} previouse={previouse}  />
         </div>
