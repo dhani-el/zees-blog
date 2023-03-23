@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import './CommentForm.css';
+import Cookies from 'js-cookie';
 
 const CommentForm = ({title , updateFunc}) => {
 
@@ -9,30 +10,33 @@ const CommentForm = ({title , updateFunc}) => {
     data.append("title", title);
     data.append("comment", comment);
 
+    const loginStatus = Cookies.get('loginStatus');
+
     const form = useRef()
         const handleSubmit = (e) => {
                 e.preventDefault();
                 form.current.reset();
-                setIsPending(true);
-                fetch("https://zeesblog.onrender.com/comments/post", {
-                    method: 'POST',
-                    credentials:"include",
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                      },
-                    body: new URLSearchParams(data),
-                }).then((value) => value.json())
-                    .then((newVal) => {
-                        updateFunc(newVal);
-                        // setIsPending(false);
-                    }).then(() => {
-                        setIsPending(false);
-                    });
+                if (loginStatus) {
+                    setIsPending(true);
+                    fetch("https://zeesblog.onrender.com/comments/post", {
+                        method: 'POST',
+                        credentials:"include",
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                          },
+                        body: new URLSearchParams(data),
+                    }).then((value) => value.json())
+                        .then((newVal) => {
+                            updateFunc(newVal);
+                            // setIsPending(false);
+                        }).then(() => {
+                            setIsPending(false);
+                        }); 
+                } else {
+                    alert('you need to be logged in love!')
+                }
         }
 
-        useEffect(function(){
-            console.log("re render was here");
-        })
 
     return (
         <div className="comment-form-container">
