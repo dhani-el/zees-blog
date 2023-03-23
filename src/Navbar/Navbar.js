@@ -4,12 +4,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import menuBtn from "../Images/hamburger.svg";
 import closeButton from "../Images/close.svg";
+import Cookies from 'js-cookie';
 
 const NavBar = () => {
     const nav = useRef();
     const tl = useRef();
-    const username = localStorage.getItem("username");
-    const loginStatus = localStorage.getItem("loginStatus");
+    const username = Cookies.get('username');
+
+    const loginStatus = Cookies.get('loginStatus');
     const [closed, setClosed] = useState(false);
     const handleOpen = () => {
         setClosed(!closed);
@@ -47,7 +49,7 @@ const NavBar = () => {
                 <li><Link to="/">home</Link></li>
                 <li><Link to="/blogs/0">blog</Link></li>
                 <li><Link to="/about">about</Link></li>
-                {loginStatus ? <li>Hi {username}</li> : <li><Link to="/signup" id="signup"><button> sign up</button></Link></li>}
+                {loginStatus ? <li>Hi {username}</li> : <li><Link to="/login" id="signup"><button> Log In</button></Link></li>}
             </ul>
             <div className="menu-btn-wrapper" onClick={handleOpen}>
                 <img src={menuBtn} alt="" />

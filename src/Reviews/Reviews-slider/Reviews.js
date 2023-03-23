@@ -53,7 +53,7 @@ const ReviewSlider = ({ slides, parentWidth }) => {
         }
         timerRef.current = setTimeout(() => {
             goToNext();
-        }, 2000);
+        }, 10000);
     }, [goToNext])
     return (
         <div className="Review-slider" style={sliderStyles}>

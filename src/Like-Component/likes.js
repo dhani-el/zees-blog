@@ -2,39 +2,51 @@ import { useState, useEffect } from "react";
 import liked from "../Images/liked.png";
 import unliked from "../Images/unliked.png";
 import "./likes.css";
+import Cookies from 'js-cookie';
 
 const Like = ({ blogTitle }) => {
 
     const [like, setLike] = useState(false);
     const [no_Of_Likes, set_no_of_likes] = useState(0);
 
+    const loginStatus = Cookies.get('loginStatus');
+
     const data = new FormData();
     data.append("title", blogTitle);
 
     function handleLike() {
-        fetch("https://zeesblog.onrender.com/likes/post", {
-            method: "POST",
-            credentials:"include",
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(data)
-        }).then(function () {
-            setLike((like) => !like);
-        })
+        if (loginStatus) {
+            fetch("https://zeesblog.onrender.com/likes/post", {
+                method: "POST",
+                credentials:"include",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams(data)
+            }).then(function () {
+                setLike((like) => !like);
+            })
+        }
+     else {
+        alert('you need to be logged in love!');
+        }
     }
 
     function handleUnLike() {
-        fetch("https://zeesblog.onrender.com/likes/delete", {
-            method: "DELETE",
-            credentials:"include",
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(data)
-        }).then(function () {
-            setLike((like) => !like);
-        })
+        if (loginStatus) {
+            fetch("https://zeesblog.onrender.com/likes/delete", {
+                method: "DELETE",
+                credentials:"include",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams(data)
+            }).then(function () {
+                setLike((like) => !like);
+            })   
+        } else{
+            alert('you need to be logged in love!');
+        }
     }
 
     useEffect(() => {

@@ -18,6 +18,7 @@ import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
 import Reviews from "../Reviews/Reviews-wrapper/Reviews";
+
 const Home = () => {
 
     let container = useRef(null);

@@ -3,10 +3,13 @@ import quotes from "../../Images/quotes.png";
 import mark from '../../Images/exclamation.png';
 import './Login.css';
 import { useHistory } from "react-router-dom";
+import Cookies from 'js-cookie';
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
+    const [isPending , setIsPending] = useState(false);
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -25,6 +28,7 @@ const Login = () => {
     payLoad.append("password", password);
 
     const login = async () => {
+        setIsPending(true);
          await fetch('https://zeesblog.onrender.com/auth/login', {
             method: 'POST',
             credentials:"include",
@@ -38,12 +42,15 @@ const Login = () => {
            return value.json();
         }).then(function(newValue){
             localStorage.setItem("loginStatus", true);
-            localStorage.setItem("username", newValue["0"].name);
-            localStorage.setItem("email", newValue["0"].email);
+            // localStorage.setItem("username", newValue["0"].name);
+            // localStorage.setItem("email", newValue["0"].email);
+            Cookies.set('loginStatus', true, { expires: 30 });
+            Cookies.set('username', newValue["0"].name, { expires: 30 });
+            Cookies.set('email', newValue["0"].email, { expires: 30 });
         }).then(function(){
             history.push("/");
             setIsLoggedIn(true);
-            console.log(isLoggedIn);
+            setIsPending(false)
         })
     }
 
@@ -55,7 +62,7 @@ const Login = () => {
                 <input type="name" placeholder='UserName' onChange={handleUserChange}/>
                 <p>Password</p>
                 <input type="password" placeholder='Password' onChange={handlePasswordChange}/>
-                <button type="submit" onClick={login}>log in</button>
+                {isPending ? <button disabled id="disabled">Logging In</button> : <button type="submit" onClick={login}>log in</button>}
             </div>
             <div className="container2">
                 <div className="overlay"></div>
@@ -70,6 +77,7 @@ const Login = () => {
             <div className="marks mark-3"><img src={mark} alt="" /></div>
             <div className="marks mark-4"><img src={mark} alt="" /></div>
             <div className="marks mark-5"><img src={mark} alt="" /></div>
+            <p className="signup-sticker"><Link to='/signup'>Don't have an account? Sign up here</Link></p>
         </div>
     );
 }

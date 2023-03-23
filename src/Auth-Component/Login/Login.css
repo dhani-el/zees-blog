@@ -46,6 +46,7 @@
     font-weight: 700;
     font-size: 1.2vw;
     transition: 200ms;
+    cursor: pointer;
 }
 
 .login-container button:hover,
@@ -149,6 +150,19 @@
     height: 4vw;
 }
 
+.signup-sticker {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 2vw;
+}
+.signup-sticker a {
+    color: rgb(40, 40, 43, 0.7);
+    cursor: pointer;
+}
+#disabled {
+    opacity: .5;
+}
 /* media queries for smaller screens */
 
 @media screen and (max-width: 650px) {
@@ -237,6 +251,12 @@
         bottom: 42%;
         width: 14vw;
         height: 14vw;
+    }
+    .signup-sticker {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        font-size: 1em;
     }
 }
 @media screen and (max-width: 420px) {
