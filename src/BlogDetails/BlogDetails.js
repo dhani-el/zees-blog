@@ -14,6 +14,7 @@ import commentsBtn from "../Images/comments.svg";
 import { formatDistanceToNowStrict, isDate } from "date-fns"
 import { gsap } from "gsap";
 import closeButton from "../Images/close.svg";
+import Cookies from 'js-cookie';
 
 const BlogDetails = () => {
     const cBlock = useRef();
@@ -31,10 +32,12 @@ const BlogDetails = () => {
     }
     const [copied, setCopied] = useState(false);
     const [commentPage, setCommentPage] = useState(0);
+    const [showDel, setShowDel] = useState(false);
+    const [closed, setClosed] = useState(false);
+    const username = Cookies.get('username');
     const handleCopy = () => {
         setCopied(true);
     }
-    const [closed, setClosed] = useState(false);
     const handleOpen = () => {
         setClosed(!closed);
     }
@@ -50,7 +53,10 @@ const BlogDetails = () => {
                 x: "0%",
                 duration: 0.5,
                 ease:'power3.inOut'
-            })
+            });
+            if (username === 'rashadx' || username === 'daniel' ) {
+                setShowDel(true)
+            }
 
     }, [blog]);
     useEffect(() => {
@@ -87,7 +93,7 @@ const BlogDetails = () => {
                             <img src={blog[0].image} alt="" className="header-image"/>
                         </div>
                         <p>{blog[0].body}</p>
-                        <button onClick={handleDelete}>delete blog</button>
+                        { showDel && <button onClick={handleDelete}>delete blog</button> }
                         <div className="like-comment-hover">
                             <Like blogTitle={blog[0].title} />
                             <div className="comments-btn-wrapper" onClick={handleOpen}><img src={commentsBtn} alt="" /></div>

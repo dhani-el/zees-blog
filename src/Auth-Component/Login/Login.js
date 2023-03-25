@@ -44,9 +44,9 @@ const Login = () => {
             localStorage.setItem("loginStatus", true);
             // localStorage.setItem("username", newValue["0"].name);
             // localStorage.setItem("email", newValue["0"].email);
-            Cookies.set('loginStatus', true, { expires: 30 });
-            Cookies.set('username', newValue["0"].name, { expires: 30 });
-            Cookies.set('email', newValue["0"].email, { expires: 30 });
+            Cookies.set('loginStatus', true, { expires: 2 });
+            Cookies.set('username', newValue["0"].name, { expires: 2 });
+            Cookies.set('email', newValue["0"].email, { expires: 2 });
         }).then(function(){
             history.push("/");
             setIsLoggedIn(true);

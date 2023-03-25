@@ -33,7 +33,7 @@ const CommentForm = ({title , updateFunc}) => {
                             setIsPending(false);
                         }); 
                 } else {
-                    alert('you need to be logged in love!')
+                    alert('you need to be logged in love!');
                 }
         }
 
