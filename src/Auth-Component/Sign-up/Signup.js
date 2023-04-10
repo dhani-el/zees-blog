@@ -57,6 +57,20 @@ const Signup = () => {
     data.append("password",password);
     data.append("newsLetter",newsletter);
 
+    const newsletterDets = async () => {
+        let ata = new FormData();
+        ata.append('email',email);
+        let result = await fetch('https://zeesblog.onrender.com/blogs/newsletter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+            body: new URLSearchParams(ata),
+        }).then(function(){
+
+        })
+    }
+
     const signUp = async (e) => {
         let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
@@ -66,12 +80,8 @@ const Signup = () => {
             body: new URLSearchParams(userInfo),
         }).then(function(){
             history.push("/login");
+            newsletterDets();
         })
-        // result = await result.json();
-        // console.log("result", result);
-        // store result in local storage
-        // push hiistory to homepage
-            // history.push("/");
     }
 
 

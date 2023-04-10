@@ -45,17 +45,23 @@
   position: relative;
 }
 
-.sub-msg-alert {
-  display: none;
-}
-
 .sub-active {
-  background-color: red;
+  background-color: rgb(19, 21, 21);
   position: absolute;
+  padding: 1%;
   left: 50%;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
   position: fixed;
   color: white;
+  border-radius: 10px;
+  z-index: 99;
+  animation: sub-fade 1500ms ease-out forwards;  
+}
+@keyframes sub-fade {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+.sub-null {
   display: none;
 }
 

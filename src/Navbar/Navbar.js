@@ -40,7 +40,7 @@ const NavBar = () => {
                 <li onClick={handleOpen}><Link to="/">home</Link></li>
                 <li onClick={handleOpen}><Link to="/blogs/0">blog</Link></li>
                 <li onClick={handleOpen}><Link to="/about">about</Link></li>
-                {loginStatus ? <li>Hi {username}</li> : <li onClick={handleOpen}><Link to="/signup" id="signup"><button> sign up</button></Link></li>}
+                {loginStatus ? <li>Hi {username}</li> : <li onClick={handleOpen}><Link to="/login" id="signup"><button>log in</button></Link></li>}
                 <div className="closeBtn-wrapper" onClick={handleOpen}>
                     <img src={closeButton} alt="" />
                 </div>

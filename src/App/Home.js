@@ -68,16 +68,29 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [])
     const [btnState, setBtnstate] = useState(false);
-
-    const handleSubmit = (e) => {
-        setBtnstate(true);
-        e.preventDefault();
+    const [email, setEmail] = useState();
+    const newsletterDets = async () => {
+        let ata = new FormData();
+        ata.append('email',email);
+        let result = await fetch('https://zeesblog.onrender.com/blogs/newsletter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+            body: new URLSearchParams(ata),
+        }).then(function(){
+            setBtnstate(true);
+        })
     }
-    let toggleClassCheck = btnState ? 'sub-active' : null;
+    const handleSubmit = (e) => {
+        // set btn state in promise
+        e.preventDefault();
+        newsletterDets();
+    }
     return (
         <div className="home-stn">
-            <div className={`sub-msg-alert ${toggleClassCheck}`}>
-                fuck you
+            <div className={btnState ? 'sub-active' : 'sub-null'}>
+                You're now an active subscriber!
             </div>
             <div className="hero-stn">
                 <div className="hero-stn-texts">
@@ -364,52 +377,11 @@ const Home = () => {
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit}>
-                        <input required type="email" name="" id="" placeholder="Email" />
+                        <input required type="email" name="" id="" placeholder="Email" onChange={(e)=> (setEmail(e.target.value))} />
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
                 </div>
             </div>
-            {/* <div className="reviews-stn">
-                <div className="review-cards">
-                    <div className="review-card">
-                        <p><box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    -Tiamiyu Mubarak
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="review-card">
-                        <p><box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!</p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    -Tiamiyu Mubarak
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="review-card">
-                        <p>
-                            <box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='lg'></box-icon>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem, nihil et sunt dolorum eaque earum iusto suscipit nam!
-                        </p>
-                        <div className="reviewer">
-                            <img src="" alt="" />
-                            <div className="reviewer-details">
-                                <div className="reviewer-name">
-                                    -Tiamiyu Mubarak
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="circle"></div>
-                </div>
-            </div> */}
             <div className="reviews-stn">
                 <Reviews />
             </div>
