@@ -55,10 +55,11 @@
   color: white;
   border-radius: 10px;
   z-index: 99;
-  animation: sub-fade 1500ms ease-out forwards;  
+  animation: sub-fade 3500ms ease-out forwards;  
 }
 @keyframes sub-fade {
   0% {opacity: 1;}
+  90% {opacity: 1;}
   100% {opacity: 0;}
 }
 .sub-null {

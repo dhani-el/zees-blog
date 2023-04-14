@@ -82,10 +82,12 @@ const Home = () => {
             setBtnstate(true);
         })
     }
+    const form = useRef()
     const handleSubmit = (e) => {
         // set btn state in promise
         e.preventDefault();
         newsletterDets();
+        form.current.reset();
     }
     return (
         <div className="home-stn">
@@ -376,7 +378,7 @@ const Home = () => {
                 <div className="newsletter-sub-stn">
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
-                    <form action="" onSubmit={handleSubmit}>
+                    <form action="" onSubmit={handleSubmit} ref={form}>
                         <input required type="email" name="" id="" placeholder="Email" onChange={(e)=> (setEmail(e.target.value))} />
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>

@@ -49,16 +49,31 @@ const About = () => {
         window.scrollTo(0, 0);
     }, [])
     const [btnState, setBtnstate] = useState(false);
-
-    const handleSubmit = (e) => {
-        setBtnstate(true);
-        e.preventDefault();
+    const [email, setEmail] = useState();
+    const newsletterDets = async () => {
+        let ata = new FormData();
+        ata.append('email',email);
+        let result = await fetch('https://zeesblog.onrender.com/blogs/newsletter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+            body: new URLSearchParams(ata),
+        }).then(function(){
+            setBtnstate(true);
+        })
     }
-    let toggleClassCheck = btnState ? 'sub-active' : null;
+    const form = useRef()
+    const handleSubmit = (e) => {
+        // set btn state in promise
+        e.preventDefault();
+        newsletterDets();
+        form.current.reset();
+    }
     return (
         <div className="about-wrapper">
-            <div className={`sub-msg-alert ${toggleClassCheck}`}>
-                fuck you
+            <div className={btnState ? 'sub-active' : 'sub-null'}>
+                You're now an active subscriber!
             </div>
             <div className="about-container">
                 <div className="zee">
@@ -133,8 +148,8 @@ const About = () => {
                 <div className="newsletter-sub-stn">
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
-                    <form action="" onSubmit={handleSubmit}>
-                        <input type="email" name="" id="" placeholder="Email" />
+                    <form action="" onSubmit={handleSubmit} ref={form}>
+                        <input type="email" name="" id="" placeholder="Email"  onChange={(e)=> (setEmail(e.target.value))}/>
                         <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
                     </form>
                 </div>
