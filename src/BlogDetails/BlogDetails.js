@@ -46,17 +46,17 @@ const BlogDetails = () => {
         tl.current = gsap.timeline({
             paused: true
         })
-            tl.current.fromTo(cBlock.current, {
-                x: "100%",
-                duration: 0
-            }, {
-                x: "0%",
-                duration: 0.5,
-                ease:'power3.inOut'
-            });
-            if (username === 'rashadx' || username === 'daniel' ) {
-                setShowDel(true)
-            }
+        tl.current.fromTo(cBlock.current, {
+            x: "100%",
+            duration: 0
+        }, {
+            x: "0%",
+            duration: 0.5,
+            ease: 'power3.inOut'
+        });
+        if (username === 'rashadx' || username === 'daniel') {
+            setShowDel(true)
+        }
 
     }, [blog]);
     useEffect(() => {
@@ -89,17 +89,16 @@ const BlogDetails = () => {
                         </div>
                         <h2>{blog[0].title}</h2>
                         <div className="header-image-wrapper">
-                            {/* <div className="header-image" style={{ backgroundImage: `url(${blog[0].image})` }}></div> */}
-                            <img src={blog[0].image} alt="" className="header-image"/>
+                            <img src={blog[0].image} alt="" className="header-image" />
                         </div>
                         <p>{blog[0].body}</p>
-                        { showDel && <button onClick={handleDelete}>delete blog</button> }
+                        {showDel && <button onClick={handleDelete}>delete blog</button>}
                         <div className="like-comment-hover">
                             <Like blogTitle={blog[0].title} />
                             <div className="comments-btn-wrapper" onClick={handleOpen}><img src={commentsBtn} alt="" /></div>
                         </div>
                         <div ref={cBlock} className={closed ? 'comments-wall played' : 'comments-wall reversed'}>
-                            <Comments title={blog[0].title} pag={commentPage}/>
+                            <Comments title={blog[0].title} pag={commentPage} />
                             <div className="close-button-wrapper" onClick={handleOpen}><img src={closeButton} alt="" /></div>
                         </div>
                     </article>}
@@ -138,7 +137,3 @@ const BlogDetails = () => {
 }
 
 export default BlogDetails;
-
-//comments should be closed by default - query on click 
-// api for all the comments - blog title for specific comments
-// same thing for likes

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Admin.css";
-// import { formatDistance } from 'date-fns';
+
 const Admin = () => {
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
@@ -15,10 +15,7 @@ const Admin = () => {
     const [monthfns, setMonthfns] = useState(0);
     const [dateNofns, setDatenofns] = useState(1);
 
-    // const result = formatDistance(
-    //     new Date(),
-    //     new Date(yearfns, monthfns, dateNofns)
-    //   )
+
 
     const data = new FormData();
     data.append("title",title);
@@ -63,14 +60,9 @@ const Admin = () => {
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
     ]
 
-    // const result = formatDistance(
-    //     new Date(),
-    //     new Date(yearfns, monthfns, dateNofns)
-    //   )
-    //   console.log(result);
+
     console.log(new Date(yearfns, monthfns, dateNofns));
-    //   new Date(yearfns, monthfns, dateNofns),
-    //   {addSuffix: true}
+
 
     return (
         <div className="admin-container">
@@ -94,10 +86,6 @@ const Admin = () => {
                     onChange={(e) => setReadtime(e.target.value)}
                 />
                 <label htmlFor="">date</label>
-                {/* <input type="text" 
-                    required
-                    onChange={(e) => setDate(e.target.value)}
-                /> */}
                 <div className="dates">
                     <select name="" id="" onChange={(e) => setYearfns(e.target.value)}>
                         {years.map((year, index) => (

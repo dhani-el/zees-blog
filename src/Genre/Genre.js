@@ -2,7 +2,6 @@ import React, {  useEffect} from "react";
 import Bloglist from '../BlogList/Bloglist';
 import Usefetch from "../TechnicalComponents/Usefetch";
 import './genre.css';
-// import { useParams } from "react-router-dom";
 import {
     BrowserRouter as Router,
     Link,
@@ -19,7 +18,6 @@ const Genre = () => {
     }
     let query = useQuery();
     let name = query.get("name");
-    // const { genre } = useParams();
     const { data: blogs, IsPending, error } = Usefetch(`https://zeesblog.onrender.com/blogs/genres/${name}/0`);
     useEffect(() => {
         window.scrollTo(0, 0)

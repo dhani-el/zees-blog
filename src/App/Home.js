@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import hero from "../Images/hero.png";
 import lap from "../Images/lap.png";
 import newsletter1 from "../Images/newsletter1.png";
 import newsletter2 from "../Images/newsletter2.png";
@@ -84,7 +83,6 @@ const Home = () => {
     }
     const form = useRef()
     const handleSubmit = (e) => {
-        // set btn state in promise
         e.preventDefault();
         newsletterDets();
         form.current.reset();

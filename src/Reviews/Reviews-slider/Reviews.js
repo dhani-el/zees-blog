@@ -61,8 +61,6 @@ const ReviewSlider = ({ slides, parentWidth }) => {
                 <div className="arrow-left" onClick={goToPrevious}>↼</div>
                 <div className="arrow-right" onClick={goToNext}>⇀</div>
             </div>
-            {/* <div className="review-text">{slides[currentIndex].review}</div>
-            <div className="reviewer">{slides[currentIndex].reviewer}</div> */}
             <div className="revss" style={slidesContainerOverflowStyles}>
                 <div className="revs" style={getSlidesContainerStylesWithWidth()}>
                     {slides.map((slide, slideIndex) => (
@@ -86,5 +84,3 @@ const ReviewSlider = ({ slides, parentWidth }) => {
 }
 
 export default ReviewSlider;
-
-// here

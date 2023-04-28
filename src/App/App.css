@@ -14,7 +14,6 @@
   pointer-events: none;
   transform: translate3d(0, 0, 0);
   position: fixed;
-  /* margin-top: -4rem; */
   mix-blend-mode: color-burn;
 }
 
@@ -400,7 +399,6 @@
   position: absolute;
   right: 0;
   bottom: -85%;
-  /* margin-top: 1em; */
 }
 
 .likes img {
@@ -615,7 +613,6 @@ footer article:nth-child(2) p {
     max-width: 80vw;
     height: 40vh;
     border-top-left-radius: 100px;
-    /* max-height: 30vh; */
   }
   .hero-stn-img-wrapper img {
     width: 100%;

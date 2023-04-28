@@ -16,7 +16,6 @@ const Login = () => {
     const history = useHistory();
     function handleUserChange(e){
         setUserName(e.target.value)
-        // console.log("username here" ,userName);
     }
 
     function handlePasswordChange(e){
@@ -42,8 +41,6 @@ const Login = () => {
            return value.json();
         }).then(function(newValue){
             localStorage.setItem("loginStatus", true);
-            // localStorage.setItem("username", newValue["0"].name);
-            // localStorage.setItem("email", newValue["0"].email);
             Cookies.set('loginStatus', true, { expires: 2 });
             Cookies.set('username', newValue["0"].name, { expires: 2 });
             Cookies.set('email', newValue["0"].email, { expires: 2 });

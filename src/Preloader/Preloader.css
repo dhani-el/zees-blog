@@ -53,7 +53,6 @@
         opacity: 1;
     }
     30%, 60% {
-        /* width: 82%; */
         width: 80%;
         opacity: 1;
     }
@@ -168,7 +167,6 @@
     }
     .preloader-container p span:nth-child(2) {
         animation: type2 1500ms steps(200) 3000ms forwards;
-        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     }
     .preloader-container p span:nth-child(3) {
         animation: type2 2000ms steps(200) 4000ms forwards;

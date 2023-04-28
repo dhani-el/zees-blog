@@ -41,7 +41,6 @@ const Blog = () => {
     let toggleClassCheck = btnState ? 'sub-active' : null;
     function next(){
         const nextId  = Number(id) + 1
-        // console.log(nextId);
         history.push(`/blogs/${nextId}`);
     }
     function previouse(){
@@ -76,6 +75,3 @@ const Blog = () => {
 }
 
 export default Blog;
-
-// if you still use facebook we want better for you
-// https://zeesblog.onrender.com/blogs/0

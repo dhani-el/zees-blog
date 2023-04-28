@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import './CommentForm.css';
 import Cookies from 'js-cookie';
+import LogReminder from "../../BlogDetails/LogReminder/LogReminder";
 
 const CommentForm = ({title , updateFunc}) => {
 
     const [comment, setComment] = useState()
     const [IsPending, setIsPending] = useState(false);
+    const [reminder, setReminder] = useState(false);
     const data = new FormData();
     data.append("title", title);
     data.append("comment", comment);
@@ -28,13 +30,12 @@ const CommentForm = ({title , updateFunc}) => {
                     }).then((value) => value.json())
                         .then((newVal) => {
                             updateFunc(newVal);
-                            // setIsPending(false);
                         }).then(() => {
                             setIsPending(false);
                         }); 
                 } else {
-                    alert('you need to be logged in love!');
-                }
+                    setReminder(true);              
+                  }
         }
 
 
@@ -45,6 +46,7 @@ const CommentForm = ({title , updateFunc}) => {
                 {!IsPending && <button>send</button>}
                 {IsPending && <button disabled id="disabled">sending</button>}
             </form>
+            { reminder && <LogReminder reminder={reminder} setReminder={setReminder}/>}
         </div>
     );
 }

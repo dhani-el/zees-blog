@@ -13,6 +13,5 @@ const Comment = ({ comments }) => {
         </div>
     );
 }
-//make id key value pair
 
 export default Comment;

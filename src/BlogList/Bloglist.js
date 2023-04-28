@@ -5,12 +5,6 @@ import { formatDistanceToNowStrict, isDate } from "date-fns"
 
 const Bloglist = ({ blogs }) => {
 
-    // const handleCapture = (e) => {
-    //     let genreLink = e.target.textContent;
-    //     return  genreLink;
-    // }
-    // let data = handleCapture();
-    // console.log(data);
     return (
         <div className="bloglist">
             {blogs.map((blog) => (

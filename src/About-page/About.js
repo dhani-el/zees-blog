@@ -65,7 +65,6 @@ const About = () => {
     }
     const form = useRef()
     const handleSubmit = (e) => {
-        // set btn state in promise
         e.preventDefault();
         newsletterDets();
         form.current.reset();

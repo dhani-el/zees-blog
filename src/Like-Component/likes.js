@@ -3,11 +3,13 @@ import liked from "../Images/liked.png";
 import unliked from "../Images/unliked.png";
 import "./likes.css";
 import Cookies from 'js-cookie';
+import LogReminder from "../BlogDetails/LogReminder/LogReminder";
 
 const Like = ({ blogTitle }) => {
 
     const [like, setLike] = useState(false);
     const [no_Of_Likes, set_no_of_likes] = useState(0);
+    const [reminder, setReminder] = useState(false);
 
     const loginStatus = Cookies.get('loginStatus');
 
@@ -28,7 +30,7 @@ const Like = ({ blogTitle }) => {
             })
         }
      else {
-        alert('you need to be logged in love!');
+        setReminder(true);
         }
     }
 
@@ -62,6 +64,7 @@ const Like = ({ blogTitle }) => {
         <div className="like-container">
             <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button>
              <p>{no_Of_Likes}</p>
+             { reminder && <LogReminder reminder={reminder} setReminder={setReminder}/>}
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Usefetch from "../../TechnicalComponents/Usefetch";
 import Comment from "../Comment/Comment";
-import Skeleton from '../../Skeleton-Screens/Skeleton';
 import CommentForm from "../Comment Form/CommentForm";
 import './Comments.css';
 
