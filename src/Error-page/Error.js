@@ -18,7 +18,7 @@ const Error = () => {
             <div className="fun-image-container">
                 <img src={ErrorImg} alt="" />
             </div>
-            <img className="m2" src={m2} alt="" />
+            <img className="m2" src={m2} alt="s curve" />
         </div>
      );
 }

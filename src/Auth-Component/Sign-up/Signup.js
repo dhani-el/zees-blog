@@ -6,6 +6,8 @@ import mark from '../../Images/exclamation.png';
 
 const Signup = () => {
 
+        // states regulating signing up
+
     const [name, setName] = useState('');
     const [validName, setvalidName] = useState(false);
     const [email, setEmail] = useState('');
@@ -19,6 +21,8 @@ const Signup = () => {
         console.log("validation starting soon")
             isValidName(e.target.value);
     }
+
+    // checking if the username already exists by cross-referencing with the API
      function isValidName(username){
       timeoutRef.current =  setTimeout(function(){
             console.log("validating username " , username);
@@ -50,12 +54,15 @@ const Signup = () => {
     const updateNewsletter = () => {
         setNewsletter(!newsletter)
     }
+    // collating sign up credentials
     let userInfo = { name, email, password }
     const data = new FormData();
     data.append("name",name);
     data.append("email",email);
     data.append("password",password);
     data.append("newsLetter",newsletter);
+
+    // implementing newsletter functions
 
     const newsletterDets = async () => {
         let ata = new FormData();
@@ -70,7 +77,7 @@ const Signup = () => {
 
         })
     }
-
+// posting sign up credentials on the API
     const signUp = async (e) => {
         let result = await fetch('https://zeesblog.onrender.com/auth/signup', {
             method: 'POST',
@@ -101,16 +108,16 @@ const Signup = () => {
             <div className="container2">
                 <div className="overlay"></div>
                 <div className="secondary-overlay">
-                    <div className="quotes"><img src={quotes} alt="" /></div>
-                    <div className="quotes"><img src={quotes} alt="" /></div>
+                    <div className="quotes"><img src={quotes} alt="left quotes" /></div>
+                    <div className="quotes"><img src={quotes} alt="right quotes" /></div>
                     <div className="text">Like gemstones, your enduring uniqueness makes you particularly beautiful.</div>
                 </div>
             </div>
-            <div className="marks mark-1"><img src={mark} alt="" /></div>
-            <div className="marks mark-2"><img src={mark} alt="" /></div>
-            <div className="marks mark-3"><img src={mark} alt="" /></div>
-            <div className="marks mark-4"><img src={mark} alt="" /></div>
-            <div className="marks mark-5"><img src={mark} alt="" /></div>
+            <div className="marks mark-1"><img src={mark} alt="exclamation mark" /></div>
+            <div className="marks mark-2"><img src={mark} alt="exclamation mark" /></div>
+            <div className="marks mark-3"><img src={mark} alt="exclamation mark" /></div>
+            <div className="marks mark-4"><img src={mark} alt="exclamation mark" /></div>
+            <div className="marks mark-5"><img src={mark} alt="exclamation mark" /></div>
         </div>
      );
 }

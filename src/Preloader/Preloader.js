@@ -7,7 +7,7 @@ import { useRef, useEffect } from "react";
 const Preloader = () => {
     const el = useRef(null);
     const headerRef = useRef(null);
-
+//  preloader animation with GSAP
     useEffect(() => {      
         gsap.to(el.current, { 
             duration: 0.5,

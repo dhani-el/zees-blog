@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import "./Admin.css";
 
 const Admin = () => {
+    // states attributing to a blog post 
+
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
     const [genre, setGenre] = useState();
@@ -16,7 +18,7 @@ const Admin = () => {
     const [dateNofns, setDatenofns] = useState(1);
 
 
-
+// collecting the data needed
     const data = new FormData();
     data.append("title",title);
     data.append("body",body);
@@ -24,6 +26,8 @@ const Admin = () => {
     data.append("readTime",readTime);
     data.append("date", new Date().toLocaleString());
     data.append("image",image);
+
+    //function for posting a blog post to the API
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,6 +41,8 @@ const Admin = () => {
                 history.push("/blogs/:id");
             })
     }
+
+    // data involving setting date fns
 
     const years = [
         2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038
@@ -60,8 +66,6 @@ const Admin = () => {
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
     ]
 
-
-    console.log(new Date(yearfns, monthfns, dateNofns));
 
 
     return (

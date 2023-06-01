@@ -20,6 +20,8 @@ import Reviews from "../Reviews/Reviews-wrapper/Reviews";
 
 const Home = () => {
 
+// opening animation using GSAP and minimized version of splitText
+
     let container = useRef(null);
     let image = useRef(null);
     let imageReveal = CSSRulePlugin.getRule(".hero-stn-img-wrapper:after");
@@ -66,6 +68,9 @@ const Home = () => {
         });
         window.scrollTo(0, 0);
     }, [])
+
+    // newsletter submission implementation
+
     const [btnState, setBtnstate] = useState(false);
     const [email, setEmail] = useState();
     const newsletterDets = async () => {
@@ -329,8 +334,8 @@ const Home = () => {
                 </div>
             </div>
             <div className="newsletter-stn">
-                <img className="m" src={m} alt="" />
-                <img src={m2} alt="" className="m2" />
+                <img className="m" src={m} alt="m curve" />
+                <img src={m2} alt="m curve" className="m2" />
                 <div className="graphics">
                     <div className="img-tile1">
                         <img className="newsletter-img-wrappers" src={newsletter2} alt="" />
@@ -353,20 +358,20 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="img-tile2">
-                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter1} alt="pencils" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
                             <div className="readers-stats">
                                 <div className="user-avatars">
-                                    <img src={avatar1} alt="" />
-                                    <img src={avatar2} alt="" />
-                                    <img src={avatar3} alt="" />
-                                    <img src={avatar4} alt="" />
+                                    <img src={avatar1} alt="profile images" />
+                                    <img src={avatar2} alt="profile images" />
+                                    <img src={avatar3} alt="profile images" />
+                                    <img src={avatar4} alt="profile images" />
                                 </div>
                                 <span className="readers-no-stats">1.1389</span>
                                 <div className="likes">
-                                    <img src={like} alt="" />
+                                    <img src={like} alt="heart shape" />
                                     <span>11351</span>
                                 </div>
                             </div>
@@ -378,7 +383,7 @@ const Home = () => {
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit} ref={form}>
                         <input required type="email" name="" id="" placeholder="Email" onChange={(e)=> (setEmail(e.target.value))} />
-                        <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
+                        <button> <span>Subscribe</span> <img src={arrow} alt="arrow" /> </button>
                     </form>
                 </div>
             </div>

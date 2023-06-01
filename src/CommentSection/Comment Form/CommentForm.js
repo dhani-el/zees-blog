@@ -15,6 +15,7 @@ const CommentForm = ({title , updateFunc}) => {
     const loginStatus = Cookies.get('loginStatus');
 
     const form = useRef()
+    // posting a comment to the API
         const handleSubmit = (e) => {
                 e.preventDefault();
                 form.current.reset();

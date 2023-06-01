@@ -12,7 +12,7 @@ const LogReminder = ({reminder, setReminder}) => {
                 You'll need to be logged in love!
             </div>
             <div className="button-wrapper" onClick={handleClick}>
-                <img src={closeBtn} alt="" />
+                <img src={closeBtn} alt="cancel button" />
             </div>
         </div>
     );

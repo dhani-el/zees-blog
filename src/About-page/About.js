@@ -18,6 +18,9 @@ import { TimelineLite, Power2 } from "gsap";
 import Footer from "../App/Footer";
 
 const About = () => {
+
+    // opening animation 
+    
     let container = useRef(null);
     let image = useRef(null);
     let imageReveal = CSSRulePlugin.getRule(".zee .img-wrapper:after");
@@ -48,6 +51,8 @@ const About = () => {
         });
         window.scrollTo(0, 0);
     }, [])
+    // Newsletter Implementation
+
     const [btnState, setBtnstate] = useState(false);
     const [email, setEmail] = useState();
     const newsletterDets = async () => {
@@ -77,7 +82,7 @@ const About = () => {
             <div className="about-container">
                 <div className="zee">
                     <div ref={el => container = el} className="img-wrapper">
-                        <img ref={el => image = el} src={typewriter} alt="" />
+                        <img ref={el => image = el} src={typewriter} alt="Typewriter" />
                     </div>
                     <article>
                         <h2 id="split-text">about zee</h2>
@@ -100,44 +105,44 @@ const About = () => {
                 </article>
             </div>
             <div className="newsletter-stn">
-                <img className="m" src={m} alt="" />
-                <img src={m2} alt="" className="m2"/>
+                <img className="m" src={m} alt="s curve" />
+                <img src={m2} alt="s curve" className="m2"/>
                 <div className="graphics">
                     <div className="img-tile1">
-                        <img className="newsletter-img-wrappers" src={newsletter2} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter2} alt="pencils" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
                             <div className="readers-stats">
                                 <div className="user-avatars">
-                                    <img src={avatar1} alt="" />
-                                    <img src={avatar2} alt="" />
-                                    <img src={avatar3} alt="" />
-                                    <img src={avatar4} alt="" />
+                                    <img src={avatar1} alt="profile images" />
+                                    <img src={avatar2} alt="profile images" />
+                                    <img src={avatar3} alt="profile images" />
+                                    <img src={avatar4} alt="profile images" />
                                 </div>
                                 <span className="readers-no-stats">1.1389</span>
                                 <div className="likes">
-                                    <img src={like} alt="" />
+                                    <img src={like} alt="heart shape" />
                                     <span>11351</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="img-tile2">
-                        <img className="newsletter-img-wrappers" src={newsletter1} alt="" />
+                        <img className="newsletter-img-wrappers" src={newsletter1} alt="someone reading a blog post" />
                         <div className="graphics-texts">
                             <p>susan</p>
                             <p>writer</p>
                             <div className="readers-stats">
                                 <div className="user-avatars">
-                                    <img src={avatar1} alt="" />
-                                    <img src={avatar2} alt="" />
-                                    <img src={avatar3} alt="" />
-                                    <img src={avatar4} alt="" />
+                                    <img src={avatar1} alt="profile images" />
+                                    <img src={avatar2} alt="profile images" />
+                                    <img src={avatar3} alt="profile images" />
+                                    <img src={avatar4} alt="profile images" />
                                 </div>
                                 <span className="readers-no-stats">1.1389</span>
                                 <div className="likes">
-                                    <img src={like} alt="" />
+                                    <img src={like} alt="heart shape" />
                                     <span>11351</span>
                                 </div>
                             </div>
@@ -149,7 +154,7 @@ const About = () => {
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit} ref={form}>
                         <input type="email" name="" id="" placeholder="Email"  onChange={(e)=> (setEmail(e.target.value))}/>
-                        <button> <span>Subscribe</span> <img src={arrow} alt="" /> </button>
+                        <button> <span>Subscribe</span> <img src={arrow} alt="arrow" /> </button>
                     </form>
                 </div>
             </div>

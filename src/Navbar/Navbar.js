@@ -42,7 +42,7 @@ const NavBar = () => {
                 <li onClick={handleOpen}><Link to="/about">about</Link></li>
                 {loginStatus ? <li>Hi {username}</li> : <li onClick={handleOpen}><Link to="/login" id="signup"><button>log in</button></Link></li>}
                 <div className="closeBtn-wrapper" onClick={handleOpen}>
-                    <img src={closeButton} alt="" />
+                    <img src={closeButton} alt="close button" />
                 </div>
             </ul>
             <ul>
@@ -52,7 +52,7 @@ const NavBar = () => {
                 {loginStatus ? <li>Hi {username}</li> : <li><Link to="/login" id="signup"><button> Log In</button></Link></li>}
             </ul>
             <div className="menu-btn-wrapper" onClick={handleOpen}>
-                <img src={menuBtn} alt="" />
+                <img src={menuBtn} alt="hamburger" />
             </div>
         </div>
     );

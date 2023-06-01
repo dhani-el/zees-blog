@@ -61,7 +61,7 @@ const Blog = () => {
             <div className="search-bar">
                 <input onChange={handleSearch} placeholder="Search" type="search" />
                 <button>
-                    <img src={searchBtn} alt="" />
+                    <img src={searchBtn} alt="search button" />
                 </button>
             </div>
             {IsPending && <Skeleton/> }

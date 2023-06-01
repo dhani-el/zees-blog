@@ -62,7 +62,7 @@ const Like = ({ blogTitle }) => {
 
     return (
         <div className="like-container">
-            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="" /></button>
+            <button onClick={like ? handleUnLike : handleLike}> <img className={like ? 'liked' : 'unliked'} src={like ? liked : unliked} alt="heart shape" /></button>
              <p>{no_Of_Likes}</p>
              { reminder && <LogReminder reminder={reminder} setReminder={setReminder}/>}
         </div>

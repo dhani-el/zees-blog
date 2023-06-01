@@ -41,6 +41,7 @@ const BlogDetails = () => {
     const handleOpen = () => {
         setClosed(!closed);
     }
+    // animating comments section
     useEffect(() => {
         window.scrollTo(0, 0);
         tl.current = gsap.timeline({
@@ -56,9 +57,11 @@ const BlogDetails = () => {
         });
         if (username === 'rashadx' || username === 'daniel') {
             setShowDel(true)
+            // correct this!!!
         }
 
     }, [blog]);
+    // animations control
     useEffect(() => {
         closed ? tl.current.play() : tl.current.reverse();
     }, [closed]);
@@ -89,17 +92,17 @@ const BlogDetails = () => {
                         </div>
                         <h2>{blog[0].title}</h2>
                         <div className="header-image-wrapper">
-                            <img src={blog[0].image} alt="" className="header-image" />
+                            <img src={blog[0].image} alt="blog image" className="header-image" />
                         </div>
                         <p>{blog[0].body}</p>
                         {showDel && <button onClick={handleDelete}>delete blog</button>}
                         <div className="like-comment-hover">
                             <Like blogTitle={blog[0].title} />
-                            <div className="comments-btn-wrapper" onClick={handleOpen}><img src={commentsBtn} alt="" /></div>
+                            <div className="comments-btn-wrapper" onClick={handleOpen}><img src={commentsBtn} alt="message button" /></div>
                         </div>
                         <div ref={cBlock} className={closed ? 'comments-wall played' : 'comments-wall reversed'}>
                             <Comments title={blog[0].title} pag={commentPage} />
-                            <div className="close-button-wrapper" onClick={handleOpen}><img src={closeButton} alt="" /></div>
+                            <div className="close-button-wrapper" onClick={handleOpen}><img src={closeButton} alt="close button" /></div>
                         </div>
                     </article>}
                     {copied && <div className="copy-alert">Copied to Clipboard!</div>}
@@ -110,10 +113,10 @@ const BlogDetails = () => {
                     <div className="links-wrapper">
                         <div className="socials-wrapper">
                             <a href="https://instagram.com/existentialcrisisgirl_?r=nametag" target="_blank" rel="noopener noreferrer" className="socials">
-                                <img src={insta} alt="" />
+                                <img src={insta} alt="instagram logo" />
                             </a>
                             <a href="https://mobile.twitter.com/jupiter_knows" target="_blank" rel="noopener noreferrer" className="socials">
-                                <img src={tweet} alt="" />
+                                <img src={tweet} alt="twitter logo" />
                             </a>
                         </div>
                     </div>

@@ -7,10 +7,11 @@ import Cookies from 'js-cookie';
 import { Link } from "react-router-dom";
 
 const Login = () => {
+
+    // states regulating logging in
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
     const [isPending , setIsPending] = useState(false);
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const history = useHistory();
@@ -26,6 +27,8 @@ const Login = () => {
     payLoad.append("username", userName);
     payLoad.append("password", password);
 
+
+    // posting the login credentials to the API
     const login = async () => {
         setIsPending(true);
          await fetch('https://zeesblog.onrender.com/auth/login', {
@@ -40,6 +43,7 @@ const Login = () => {
         }).then(function(value){
            return value.json();
         }).then(function(newValue){
+            // storing login credentials in local storage 
             localStorage.setItem("loginStatus", true);
             Cookies.set('loginStatus', true, { expires: 2 });
             Cookies.set('username', newValue["0"].name, { expires: 2 });
