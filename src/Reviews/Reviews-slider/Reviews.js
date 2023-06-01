@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import "./Reviews.css";
-import 'boxicons';
 
 const slideStyles = {
     width: "100%",
@@ -66,7 +65,6 @@ const ReviewSlider = ({ slides, parentWidth }) => {
                     {slides.map((slide, slideIndex) => (
                         <div className="rev" key={slideIndex} style={getSlideStylesWithBackground(slideIndex)}>
                             <div className="review-text">
-                                <box-icon name='quote-alt-left' type='solid' color='rgba(0,0,0,0.8)' pull='left' size='sm'></box-icon>
                                 {slide.review}
                             </div>
                             <div className="reviewer">{slide.reviewer}</div>
