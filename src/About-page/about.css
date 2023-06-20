@@ -4,6 +4,7 @@
 
 .about-container {
     padding: 0rem 10vw;
+    user-select: none;
 }
 
 .zee {

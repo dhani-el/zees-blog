@@ -35,6 +35,7 @@
 .blog-details .blog-nav {
     display: flex;
     justify-content: space-between;
+    user-select: none;
 }
 
 .blog-details .share-container {
@@ -440,12 +441,15 @@ h2 {
 
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 377px) {
 
     .blog-details .blog-stats .read-time,
     .blog-stats .date {
         color: rgba(58, 58, 58, 0.7);
         font-size: 4vw;
+    }
+    #blog-body{
+        font-size: 1em;
     }
 }
 

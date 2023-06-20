@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lap from "../Images/lap.png";
+import lap from "../Images/lap.jpg";
 import newsletter1 from "../Images/newsletter1.png";
 import newsletter2 from "../Images/newsletter2.png";
 import avatar1 from "../Images/avatar1.png";
@@ -14,6 +14,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
+import CSSPlugin from "gsap/CSSPlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "./Footer";
 import Reviews from "../Reviews/Reviews-wrapper/Reviews";
@@ -24,10 +25,10 @@ const Home = () => {
 
     let container = useRef(null);
     let image = useRef(null);
+    gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
     let imageReveal = CSSRulePlugin.getRule(".hero-stn-img-wrapper:after");
 
     const tl = new TimelineLite();
-
     useEffect(() => {
         tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,

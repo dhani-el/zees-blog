@@ -3,6 +3,7 @@
     grid-template-columns: 40vw 60vw;
     height: 100vh;
     position: relative;
+    user-select: none;
 }
 
 .login-container .form {

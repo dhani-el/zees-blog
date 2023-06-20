@@ -16,6 +16,7 @@ import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { TimelineLite, Power2 } from "gsap";
 import Footer from "../App/Footer";
+import CSSPlugin from "gsap/CSSPlugin";
 
 const About = () => {
 
@@ -23,10 +24,10 @@ const About = () => {
     
     let container = useRef(null);
     let image = useRef(null);
+    gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
     let imageReveal = CSSRulePlugin.getRule(".zee .img-wrapper:after");
 
     const tl = new TimelineLite();
-
     useEffect(() => {
         tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,

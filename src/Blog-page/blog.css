@@ -56,6 +56,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
 }
 
 .blog-preview .blog-text {
@@ -179,6 +180,7 @@
     gap: 3vw;
     margin-right: 30vw;
     padding-bottom: 2rem;
+    user-select: none;
 }
 
 .pagination button {
@@ -223,6 +225,19 @@
     .blog-preview {
         width: 100%;
     }
+    .blogs-container {
+        /* border: 10px solid red; */
+        min-height: 90.7vh;
+        padding-bottom: 8vh;
+    }
+    .pagination {
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-bottom: 0rem;
+    }
+    
 }
 @media screen and (max-width: 450px) {
     .blog-preview {

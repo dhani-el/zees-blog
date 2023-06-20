@@ -159,6 +159,7 @@
   height: 100vh;
   align-items: center;
   margin-top: -3rem;
+  user-select: none;
 }
 
 .hero-stn-texts {
@@ -307,6 +308,7 @@
   margin-top: 1rem;
   background-color: #449183;
   color: #f8fcfb;
+  user-select: none;
 }
 
 .graphics {
@@ -511,6 +513,7 @@ footer {
   justify-content: space-between;
   padding: 5rem 5rem;
   align-items: center;
+  user-select: none;
 }
 
 footer article:nth-child(1) p {

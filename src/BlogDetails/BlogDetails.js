@@ -94,7 +94,7 @@ const BlogDetails = () => {
                         <div className="header-image-wrapper">
                             <img src={blog[0].image} alt="blog image" className="header-image" />
                         </div>
-                        <p>{blog[0].body}</p>
+                        <p id="blog-body">{blog[0].body}</p>
                         {showDel && <button onClick={handleDelete}>delete blog</button>}
                         <div className="like-comment-hover">
                             <Like blogTitle={blog[0].title} />
