@@ -15,7 +15,8 @@ import { gsap } from "gsap";
 import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import CSSPlugin from "gsap/CSSPlugin";
-import { TimelineLite, Power2 } from "gsap";
+import { Power2 } from "gsap";
+import { Timeline } from "gsap/gsap-core";
 import Footer from "./Footer";
 import Reviews from "../Reviews/Reviews-wrapper/Reviews";
 
@@ -26,9 +27,9 @@ const Home = () => {
     let container = useRef(null);
     let image = useRef(null);
     gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
-    let imageReveal = CSSRulePlugin.getRule(".hero-stn-img-wrapper:after");
+    let imageReveal = CSSRulePlugin.getRule(".hero-stn-img-wrapper::after");
 
-    const tl = new TimelineLite();
+    const tl = new Timeline();
     useEffect(() => {
         tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,

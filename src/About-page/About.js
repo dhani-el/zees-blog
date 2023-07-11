@@ -14,7 +14,8 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitText from "../TechnicalComponents/SplitText.min.js";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
-import { TimelineLite, Power2 } from "gsap";
+import { Power2 } from "gsap";
+import { Timeline } from "gsap/gsap-core";
 import Footer from "../App/Footer";
 import CSSPlugin from "gsap/CSSPlugin";
 
@@ -25,9 +26,9 @@ const About = () => {
     let container = useRef(null);
     let image = useRef(null);
     gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
-    let imageReveal = CSSRulePlugin.getRule(".zee .img-wrapper:after");
+    let imageReveal = CSSRulePlugin.getRule(".zee .img-wrapper::after");
 
-    const tl = new TimelineLite();
+    const tl = new Timeline();
     useEffect(() => {
         tl.to(container, 1, { css: { visibility: "visible", overflow: "visible" } }).to(
             imageReveal,
