@@ -4,7 +4,6 @@ import Usefetch from "../TechnicalComponents/Usefetch";
 import './genre.css';
 import {
     BrowserRouter as Router,
-    Link,
     useLocation
 } from "react-router-dom";
 import Footer from "../App/Footer";

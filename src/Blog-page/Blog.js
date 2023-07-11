@@ -1,10 +1,10 @@
 import Bloglist from '../BlogList/Bloglist';
 import Usefetch from "../TechnicalComponents/Usefetch";
 import Pagination from '../pagination/pagination';
-import { useState , useEffect} from "react";
+import { useState } from "react";
 import searchBtn from "../Images/searchbtn.png";
 import Footer from "../App/Footer";
-import { useParams , useHistory, Link} from "react-router-dom";
+import { useParams , useHistory} from "react-router-dom";
 import Skeleton from '../Skeleton-Screens/Skeleton';
 
 
@@ -16,10 +16,10 @@ const Blog = () => {
     const [btnState, setBtnstate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
-    const handleSubmit = (e) => {
-        setBtnstate(true);
-        e.preventDefault();
-    }
+    // const handleSubmit = (e) => {
+    //     setBtnstate(true);
+    //     e.preventDefault();
+    // }
     const handleSearch = async (e) => {
         setSearchTerm(e.target.value);
          searchQuery(e.target.value)
@@ -50,7 +50,7 @@ const Blog = () => {
         }
         history.push("/blogs/"+previouseId);
     }
-    
+
     return (
         <div className="blogs-container">
             <div className="sticky">

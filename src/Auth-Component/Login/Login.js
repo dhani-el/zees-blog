@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import quotes from "../../Images/quotes.png";
 import mark from '../../Images/exclamation.png';
 import './Login.css';

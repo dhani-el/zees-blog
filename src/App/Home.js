@@ -68,7 +68,7 @@ const Home = () => {
             delay: 8.1
         });
         window.scrollTo(0, 0);
-    }, [])
+    }, [imageReveal, tl])
 
     // newsletter submission implementation
 

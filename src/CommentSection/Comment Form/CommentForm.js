@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import './CommentForm.css';
 import Cookies from 'js-cookie';
 import LogReminder from "../../BlogDetails/LogReminder/LogReminder";

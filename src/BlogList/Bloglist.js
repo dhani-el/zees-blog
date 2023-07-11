@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import '../Blog-page/blog.css';
 import './BlogList.css';
-import { formatDistanceToNowStrict, isDate } from "date-fns"
+import { formatDistanceToNowStrict } from "date-fns"
 
 const Bloglist = ({ blogs }) => {
 

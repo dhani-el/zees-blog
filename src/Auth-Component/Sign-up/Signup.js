@@ -1,4 +1,4 @@
-import { useState, useEffect , useRef} from "react";
+import { useState, useRef} from "react";
 import { useHistory } from "react-router-dom";
 import quotes from "../../Images/quotes.png";
 import './Signup.css';

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import "./Reviews.css";
 
 const slideStyles = {
@@ -21,7 +21,7 @@ const slidesContainerOverflowStyles = {
     width: "80%"
 };
 const ReviewSlider = ({ slides, parentWidth }) => {
-    const timerRef = useRef(null);
+    // const timerRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const goToPrevious = () => {
@@ -46,14 +46,20 @@ const ReviewSlider = ({ slides, parentWidth }) => {
         width: `${parentWidth * slides.length}vw`,
         transform: `translateX(${-(currentIndex * parentWidth)}vw)`,
     });
-    useEffect(() => {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-        }
-        timerRef.current = setTimeout(() => {
-            goToNext();
-        }, 10000);
-    }, [goToNext])
+    // const fetchSpecific = ()=> {
+    //     if (timerRef.current) {
+    //         clearTimeout(timerRef.current);
+    //     }
+    //     timerRef.current = setTimeout(() => {
+    //         goToNext();
+    //     }, 10000);
+    // }
+    // useEffect(() => {
+    //     fetchSpecific();
+    //     return () => {
+    //         timerRef.current = false;   // clean up function
+    //       };
+    // }, [fetchSpecific])
     return (
         <div className="Review-slider" style={sliderStyles}>
             <div className="arrows">

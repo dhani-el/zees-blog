@@ -51,7 +51,7 @@ const About = () => {
             delay: .5
         });
         window.scrollTo(0, 0);
-    }, [])
+    }, [imageReveal, tl])
     // Newsletter Implementation
 
     const [btnState, setBtnstate] = useState(false);

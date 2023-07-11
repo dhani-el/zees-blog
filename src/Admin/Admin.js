@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Admin.css";
 
@@ -9,7 +9,7 @@ const Admin = () => {
     const [body, setBody] = useState();
     const [genre, setGenre] = useState();
     const [readTime, setReadtime] = useState();
-    const [date, setDate] = useState();
+    // const [date, setDate] = useState();
     const [IsPending, setIsPending] = useState(false);
     const history = useHistory();
     const [image, setImage] = useState();
@@ -125,7 +125,7 @@ const Admin = () => {
             <p>{body}</p>
             <p>{genre}</p>
             <p>{readTime}</p>
-            <p>{date}</p>
+            {/* <p>{date}</p> */}
             <p>{yearfns}</p>
             <p>{monthfns}</p>
             <p>{dateNofns}</p>

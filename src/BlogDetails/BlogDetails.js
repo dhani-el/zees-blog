@@ -11,7 +11,7 @@ import tweet from "../Images/twitterlogo.png";
 import Like from "../Like-Component/likes"
 import Comments from "../CommentSection/Comments/Comments"
 import commentsBtn from "../Images/comments.svg";
-import { formatDistanceToNowStrict, isDate } from "date-fns"
+import { formatDistanceToNowStrict } from "date-fns"
 import { gsap } from "gsap";
 import closeButton from "../Images/close.svg";
 import Cookies from 'js-cookie';
@@ -60,7 +60,7 @@ const BlogDetails = () => {
             // correct this!!!
         }
 
-    }, [blog]);
+    }, [blog, username]);
     // animations control
     useEffect(() => {
         closed ? tl.current.play() : tl.current.reverse();
@@ -92,7 +92,7 @@ const BlogDetails = () => {
                         </div>
                         <h2>{blog[0].title}</h2>
                         <div className="header-image-wrapper">
-                            <img src={blog[0].image} alt="blog image" className="header-image" />
+                            <img src={blog[0].image} alt="blog" className="header-image" />
                         </div>
                         <p id="blog-body">{blog[0].body}</p>
                         {showDel && <button onClick={handleDelete}>delete blog</button>}

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Usefetch from "../../TechnicalComponents/Usefetch";
 import Comment from "../Comment/Comment";
 import CommentForm from "../Comment Form/CommentForm";

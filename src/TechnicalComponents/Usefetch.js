@@ -27,8 +27,8 @@ const Usefetch = (url , id) => {
                 setIsPending(false);
             })
         }, 1000);
-        // return () => abortCont.abort();
-    }, [id]);
+        return () => abortCont.abort();
+    }, [id, url]);
     
     return ( {data, IsPending, error , setdata} );
 }
