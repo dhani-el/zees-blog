@@ -20,13 +20,14 @@ const Usefetch = (url , id) => {
             .then(data => {
                 setdata(data);
                 setIsPending(false);
+                window.scrollTo(0,0);
             })
             .catch(err => {
                 setError(err.message);
                 setIsPending(false);
             })
         }, 1000);
-        return () => abortCont.abort();
+        // return () => abortCont.abort();
     }, [id]);
     
     return ( {data, IsPending, error , setdata} );

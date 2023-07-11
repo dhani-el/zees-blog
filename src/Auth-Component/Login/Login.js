@@ -7,10 +7,6 @@ import Cookies from 'js-cookie';
 import { Link } from "react-router-dom";
 
 const Login = () => {
-
-    // const navigate = useNavigate();
-
-    // states regulating logging in
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
     const [isPending , setIsPending] = useState(false);
@@ -20,11 +16,9 @@ const Login = () => {
     function handleUserChange(e){
         setUserName(e.target.value)
     }
-
     function handlePasswordChange(e){
         setPassword(e.target.value)
     }
-
     const payLoad = new FormData();
     payLoad.append("username", userName);
     payLoad.append("password", password);
@@ -50,10 +44,10 @@ const Login = () => {
             Cookies.set('loginStatus', true, { expires: 2 });
             Cookies.set('username', newValue["0"].name, { expires: 2 });
             Cookies.set('email', newValue["0"].email, { expires: 2 });
-        }).then(function(){
-            history.push("/");
             setIsLoggedIn(true);
             setIsPending(false)
+        }).then(function(){
+            history.push("/");
         })
     }
 

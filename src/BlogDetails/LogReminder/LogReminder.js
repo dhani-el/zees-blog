@@ -1,5 +1,6 @@
 import './LogReminder.css';
 import closeBtn from "../../Images/close.svg";
+import { Link } from "react-router-dom";
 
 const LogReminder = ({reminder, setReminder}) => {
 
@@ -9,8 +10,9 @@ const LogReminder = ({reminder, setReminder}) => {
     return (
         <div className="login-reminder-overlay">
             <div className="login-reminder-overlay-child">
-                You'll need to be logged in love!
+                You need to be logged in!
             </div>
+            <div className="login-link"><Link to="/login">Login</Link></div>
             <div className="button-wrapper" onClick={handleClick}>
                 <img src={closeBtn} alt="cancel button" />
             </div>

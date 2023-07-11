@@ -21,7 +21,7 @@ import CSSPlugin from "gsap/CSSPlugin";
 const About = () => {
 
     // opening animation 
-    
+
     let container = useRef(null);
     let image = useRef(null);
     gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
@@ -58,14 +58,14 @@ const About = () => {
     const [email, setEmail] = useState();
     const newsletterDets = async () => {
         let ata = new FormData();
-        ata.append('email',email);
+        ata.append('email', email);
         let result = await fetch('https://zeesblog.onrender.com/blogs/newsletter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
-              },
+            },
             body: new URLSearchParams(ata),
-        }).then(function(){
+        }).then(function () {
             setBtnstate(true);
         })
     }
@@ -87,27 +87,28 @@ const About = () => {
                     </div>
                     <article>
                         <h2 id="split-text">about zee</h2>
-                        <p id="split-text" className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quibusdam voluptate quae, excepturi voluptatem animi!</p>
+                        <p id="split-text" className="lorem">Hello, my name is Adebayo Susan, I am a multifaceted creative (writer, marketer, designer and so much more)</p>
                         <ul>
-                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, possimus.</li>
-                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quasi.</li>
-                            <li className="aboutZee" id="split-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatibus?</li>
+                            <li className="aboutZee" id="split-text">I am an aspiring UI/UX writer/researcher.</li>
+                            <li className="aboutZee" id="split-text">I have marketed, managed and helped create content for a company (Waist beads by Nora) that specializes in making luxurious adornment for women.</li>
+                            <li className="aboutZee" id="split-text">Apart from my 9-5 jobs, I have a website where I share resources dedicated to helping young people everywhere become their best selves and to better hold themselves accountable.</li>
                         </ul>
                     </article>
                 </div>
                 <article className="article">
                     <p>
-                        Whether they are discovering themself, finding their feet in a new career, navigating relationships, keeping up with academics, or exploring that new and thrilling hobby, they need support, even if it is just a little.                     </p>
+                        Whether they are discovering themself, finding their feet in a new career, navigating relationships, keeping up with academics, or exploring that new and thrilling hobby, they need support, even if it is just a little.
+                    </p>
                     <p>
                         Zee is for them. Zee is for every twenty-something, by a twenty-something.
                     </p>
                     <p>
-                        Zee provides guidance and inspiration to twenty-something-year-olds steering through life with intricately delivered how-to guides, inspiring features, and relatable firsthand accounts. Zee is rooting for every young person to have a well-balanced and fulfilling life and wants them always to remember that we are their biggest and loudest cheerleaders.                    </p>
+                        Zee provides guidance and inspiration to twenty-something-year-olds steering through life with intricately delivered how-to guides, inspiring features, and relatable firsthand accounts. Zee is rooting for every young person to have a well-balanced and fulfilling life and wants them always to remember that we are their biggest and loudest cheerleaders. In my free time, I'm a crochet designer.</p>
                 </article>
             </div>
             <div className="newsletter-stn">
                 <img className="m" src={m} alt="s curve" />
-                <img src={m2} alt="s curve" className="m2"/>
+                <img src={m2} alt="s curve" className="m2" />
                 <div className="graphics">
                     <div className="img-tile1">
                         <img className="newsletter-img-wrappers" src={newsletter2} alt="pencils" />
@@ -154,7 +155,7 @@ const About = () => {
                     <h2>subscribe to our newsletter</h2>
                     <p>Join many other lifestyle enthusiasts who receive our content in their inbox.</p>
                     <form action="" onSubmit={handleSubmit} ref={form}>
-                        <input type="email" name="" id="" placeholder="Email"  onChange={(e)=> (setEmail(e.target.value))}/>
+                        <input type="email" name="" id="" placeholder="Email" onChange={(e) => (setEmail(e.target.value))} />
                         <button> <span>Subscribe</span> <img src={arrow} alt="arrow" /> </button>
                     </form>
                 </div>
