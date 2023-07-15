@@ -31,7 +31,6 @@ const CommentForm = ({title , updateFunc}) => {
                     }).then((value) => value.json())
                         .then((newVal) => {
                             updateFunc(newVal);
-                        }).then(() => {
                             setIsPending(false);
                         }); 
                 } else {
