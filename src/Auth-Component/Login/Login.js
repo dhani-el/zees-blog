@@ -10,7 +10,7 @@ const Login = () => {
     const [userName , setUserName] = useState();
     const [password , setPassword] = useState();
     const [isPending , setIsPending] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [error,  setError] = useState(null);
 
     const history = useHistory();
     function handleUserChange(e){
@@ -36,21 +36,37 @@ const Login = () => {
              
             body: new URLSearchParams(payLoad),
 
-        }).then(function(value){
-           return value.json();
-        }).then(function(newValue){
-            // storing login credentials in local storage 
-            localStorage.setItem("loginStatus", true);
-            Cookies.set('loginStatus', true, { expires: 2 });
-            Cookies.set('username', newValue["0"].name, { expires: 2 });
-            Cookies.set('email', newValue["0"].email, { expires: 2 });
-            setIsLoggedIn(true);
-            setIsPending(false)
-        }).then(function(){
-            history.replace("/");
         })
+        .then(data => {
+            return data.json();
+        })
+        .then(newData => {
+                     // storing login credentials in local storage 
+         Cookies.set('loginStatus', true, { expires: 2 });
+         Cookies.set('username', newData["0"].name, { expires: 2 });
+         Cookies.set('email', newData["0"].email, { expires: 2 });
+         setIsPending(false)
+        })
+        .then(() => {
+            history.push("/");
+        })
+        .catch(err => {
+            setError(err.message);
+            setIsPending(false);
+        });
     }
 
+    // .then(function(value){
+    //     return value.json();
+    //  }).then(function(newValue){
+    //      // storing login credentials in local storage 
+    //      Cookies.set('loginStatus', true, { expires: 2 });
+    //      Cookies.set('username', newValue["0"].name, { expires: 2 });
+    //      Cookies.set('email', newValue["0"].email, { expires: 2 });
+    //      setIsPending(false)
+    //  }).then(function(){
+    //      history.replace("/");
+    //  })
     return ( 
         <div className="login-container">
             <div className="form">
