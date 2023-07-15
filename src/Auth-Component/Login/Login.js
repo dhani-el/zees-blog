@@ -37,34 +37,17 @@ const Login = () => {
             body: new URLSearchParams(payLoad),
 
         })
-            .then((data) => {
-                return data.json();
-            })
-            .then ((data)=> {
-                // history.push("/");
-                console.log(data);
+            .then(() => {
                 //  storing login credentials in local storage 
                 Cookies.set('loginStatus', true, { expires: 2 });
-                Cookies.set('username', data["0"].name, { expires: 2 });
-                Cookies.set('email', data["0"].email, { expires: 2 });
+                Cookies.set('username', userName, { expires: 2 });
+                history.push("/");
             })
             .catch(err => {
                 setError(err.message);
                 setIsPending(false);
             });
     }
-
-    // .then(function(value){
-    //     return value.json();
-    //  }).then(function(newValue){
-    //      // storing login credentials in local storage 
-    //      Cookies.set('loginStatus', true, { expires: 2 });
-    //      Cookies.set('username', newValue["0"].name, { expires: 2 });
-    //      Cookies.set('email', newValue["0"].email, { expires: 2 });
-    //      setIsPending(false)
-    //  }).then(function(){
-    //      history.replace("/");
-    //  })
     return (
         <div className="login-container">
             <div className="form">

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import quotes from "../../Images/quotes.png";
 import './Signup.css';
 import mark from '../../Images/exclamation.png';
+import Cookies from 'js-cookie';
 
 const Signup = () => {
 
@@ -86,6 +87,7 @@ const Signup = () => {
               },
             body: new URLSearchParams(userInfo),
         }).then(function(){
+            Cookies.set('email', email, { expires: 2 });
             history.push("/login");
             newsletterDets();
         })
