@@ -47,7 +47,7 @@ const Login = () => {
             setIsLoggedIn(true);
             setIsPending(false)
         }).then(function(){
-            history.push("/");
+            history.replace("/");
         })
     }
 
