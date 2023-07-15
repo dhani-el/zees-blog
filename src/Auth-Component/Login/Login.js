@@ -37,20 +37,14 @@ const Login = () => {
             body: new URLSearchParams(payLoad),
 
         })
-        .then(data => {
-            return data.json();
-        })
-        .then((
-            // newData
-        ) => {
-                     // storing login credentials in local storage 
+        .then(() => {
+            history.push("/");
+            console.log('logged!');
+                                 // storing login credentials in local storage 
         //  Cookies.set('loginStatus', true, { expires: 2 });
         //  Cookies.set('username', newData["0"].name, { expires: 2 });
         //  Cookies.set('email', newData["0"].email, { expires: 2 });
-        console.log('logged!');
-        })
-        .then(() => {
-            history.push("/");
+        // console.log('logged!');
         })
         .catch(err => {
             setError(err.message);
