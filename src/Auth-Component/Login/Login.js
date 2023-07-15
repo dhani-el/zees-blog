@@ -7,16 +7,16 @@ import Cookies from 'js-cookie';
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const [userName , setUserName] = useState();
-    const [password , setPassword] = useState();
-    const [isPending , setIsPending] = useState(false);
-    const [error,  setError] = useState(null);
+    const [userName, setUserName] = useState();
+    const [password, setPassword] = useState();
+    const [isPending, setIsPending] = useState(false);
+    const [error, setError] = useState(null);
 
     const history = useHistory();
-    function handleUserChange(e){
+    function handleUserChange(e) {
         setUserName(e.target.value)
     }
-    function handlePasswordChange(e){
+    function handlePasswordChange(e) {
         setPassword(e.target.value)
     }
     const payLoad = new FormData();
@@ -27,29 +27,31 @@ const Login = () => {
     // posting the login credentials to the API
     const login = async () => {
         setIsPending(true);
-         await fetch('https://zeesblog.onrender.com/auth/login', {
+        await fetch('https://zeesblog.onrender.com/auth/login', {
             method: 'POST',
-            credentials:"include",
+            credentials: "include",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
-              },
-             
+            },
+
             body: new URLSearchParams(payLoad),
 
         })
-        .then(() => {
-            history.push("/");
-            console.log('logged!');
-                                 // storing login credentials in local storage 
-        //  Cookies.set('loginStatus', true, { expires: 2 });
-        //  Cookies.set('username', newData["0"].name, { expires: 2 });
-        //  Cookies.set('email', newData["0"].email, { expires: 2 });
-        // console.log('logged!');
-        })
-        .catch(err => {
-            setError(err.message);
-            setIsPending(false);
-        });
+            .then((data) => {
+                return data.json();
+            })
+            .then ((data)=> {
+                // history.push("/");
+                console.log(data);
+                //  storing login credentials in local storage 
+                Cookies.set('loginStatus', true, { expires: 2 });
+                Cookies.set('username', data["0"].name, { expires: 2 });
+                Cookies.set('email', data["0"].email, { expires: 2 });
+            })
+            .catch(err => {
+                setError(err.message);
+                setIsPending(false);
+            });
     }
 
     // .then(function(value){
@@ -63,14 +65,14 @@ const Login = () => {
     //  }).then(function(){
     //      history.replace("/");
     //  })
-    return ( 
+    return (
         <div className="login-container">
             <div className="form">
                 <h2>Welcome back to ZEE</h2>
                 <p>Username</p>
-                <input type="name" placeholder='UserName' onChange={handleUserChange}/>
+                <input type="name" placeholder='UserName' onChange={handleUserChange} />
                 <p>Password</p>
-                <input type="password" placeholder='Password' onChange={handlePasswordChange}/>
+                <input type="password" placeholder='Password' onChange={handlePasswordChange} />
                 {isPending ? <button disabled id="disabled">Logging In</button> : <button type="submit" onClick={login}>log in</button>}
             </div>
             <div className="container2">

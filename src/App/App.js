@@ -62,7 +62,7 @@ function App() {
               <NavBar/>
               <Admin />
             </Route>
-            <Route path="">
+            <Route path="*">
               <Error />
             </Route>
           </Switch>
