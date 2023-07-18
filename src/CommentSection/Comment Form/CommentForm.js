@@ -8,6 +8,7 @@ const CommentForm = ({ title, updateFunc }) => {
 
     const [comment, setComment] = useState()
     const [IsPending, setIsPending] = useState(false);
+    const [IsRendering, setIsRendering] = useState(false);
     const [reminder, setReminder] = useState(false);
     const data = new FormData();
     data.append("title", title);
@@ -15,30 +16,24 @@ const CommentForm = ({ title, updateFunc }) => {
 
     const loginStatus = Cookies.get('loginStatus');
 
-    const fetchComments = () => {
+    const fetchComments = async () => {
         setIsPending(true);
-         fetch("https://zeesblog.onrender.com/comments/post", {
-            method: 'POST',
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(data),
-        }).then((value) => {
-            setIsPending(false);
-            return value.json();
-        })
-        .then((value)=>{
-            updateFunc(value);
-        })
-            .catch(err => {
+            let newData = await fetch("https://zeesblog.onrender.com/comments/post", {
+                method: 'POST',
+                credentials: "include",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams(data),
+            }).then((value) => {
                 setIsPending(false);
-            });
+                return value.json();
+            })
+        .catch((err)=> {
+            setIsPending(false);
+        });
+        updateFunc(newData);
     }
-
-    // if(!IsPending) {
-    //     fetchComments();
-    // }
 
     const form = useRef()
     // posting a comment to the API
