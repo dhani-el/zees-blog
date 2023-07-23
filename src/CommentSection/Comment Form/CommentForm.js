@@ -26,13 +26,14 @@ const CommentForm = ({ title, updateFunc }) => {
                 },
                 body: new URLSearchParams(data),
             }).then((value) => {
-                setIsPending(false);
                 return value.json();
+            }).then((newData)=> {
+                setIsPending(false);
+                updateFunc(newData);
             })
         .catch((err)=> {
             setIsPending(false);
         });
-        updateFunc(newData);
     }
 
     const form = useRef()
