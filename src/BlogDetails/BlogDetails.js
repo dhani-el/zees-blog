@@ -24,15 +24,15 @@ const BlogDetails = () => {
     const history = useHistory();
     const handleDelete = () => {
         fetch(`https://zeesblog.onrender.com/admin/delete/${id}`, {
-            method: 'DELETE'
-        })
-            .then(() => {
+            method: 'DELETE',
+            credentials:'include'
+        }).then(() => {
                 history.push("/blogs/0")
             })
     }
     const [copied, setCopied] = useState(false);
     const [commentPage, setCommentPage] = useState(0);
-    const [showDel, setShowDel] = useState(false);
+    const [showDel, setShowDel] = useState(true);
     const [closed, setClosed] = useState(false);
     const username = Cookies.get('username');
     const handleCopy = () => {
