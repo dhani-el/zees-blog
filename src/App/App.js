@@ -1,4 +1,5 @@
 import './App.css';
+import { Suspense,lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from '../Navbar/Navbar';
 import Home from './Home';
@@ -14,11 +15,21 @@ import Preloader from '../Preloader/Preloader';
 import Signup from '../Auth-Component/Sign-up/Signup';
 import Login from '../Auth-Component/Login/Login';
 
+// const Home = lazy(()=> import('./Home'));
+// const Signup = lazy(()=> import('../Auth-Component/Sign-up/Signup'));
+// const Login = lazy(()=> import('../Auth-Component/Login/Login'));
+// const Blog = lazy(()=> import('../Blog-page/Blog'));
+// const BlogDetails = lazy(()=> import('../BlogDetails/BlogDetails'));
+// const Genre = lazy(()=> import('../Genre/Genre'));
+// const Share = lazy(()=> import('../TechnicalComponents/Share'));
+// const Admin = lazy(()=> import('../Admin/Admin'));
+// const About = lazy(()=> import('../About-page/About'));
+// const Error = lazy(()=> import('../Error-page/Error'));
 
 
 function App() {
   return (
-
+    <Suspense fallback = {<div> loading</div>} >
     <Router>
       <div className="App">
         {/* <Cursor /> */}
@@ -69,6 +80,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </Suspense>
 
   );
 }
